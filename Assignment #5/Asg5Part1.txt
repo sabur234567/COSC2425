@@ -1,0 +1,421 @@
+Sabur Khan Assignment #5 Part 1
+
+package asg5;
+
+public class BankAccount {
+	public final static String DEFAULT_ACCOUNT_NUMBER = "xxxxxx";
+	public final static String DEFAULT_NAME = "$$$$";
+	private String lastName;
+	private String firstName;
+	private String accountNumber;
+	private double balance;
+	private AccountType accountType;
+	private BusinessType businessType;
+	// default constructor, creates a default BankAccount instance
+    // account number: xxxxxx, first and last names: $$$$, account type: CHECKING,
+    // business type: PERSONAL
+	public BankAccount()
+	{
+		this.setAccountNumber(DEFAULT_ACCOUNT_NUMBER);
+		this.setFirstName("$$$$");
+		this.setLastName("$$$$");
+		this.setAccountType(AccountType.CHECKING);
+		this.setBusinessType(BusinessType.PERSONAL);
+	}
+	 // creates BankAccount instance with given data, if any received data is invalid
+     // puts default value into field (name: $$$$, accountnumber: xxxxxx)
+	 public BankAccount(String aAccountNumber, String aLastName, String aFirstName,AccountType aAccountType, BusinessType aBusinessType, double aBalance)
+	 {
+		this.setAccountNumber(aAccountNumber);
+		this.setFirstName(aFirstName);
+		this.setLastName(aLastName);
+		this.setAccountType(aAccountType);
+		this.setBusinessType(aBusinessType);
+		this.setBalance(aBalance);
+	 }
+	 public String getFirstName()// returns the first name of this BankAccount
+	 {
+		 return this.firstName;
+	 }
+	 public String getLastName()// returns the last name of this BankAccount
+	 {
+		 return this.lastName;
+	 }
+	 public String getAccountNumber() // returns the account number of this BankAccount
+	 {
+		 return this.accountNumber;
+	 }
+	 public double getBalance() // returns the balance of this BankAccount
+	 {
+		 return this.balance;
+	 }
+	 public AccountType  getAccountType() // returns the account type of this BankAccount
+	 {
+		 return this.accountType;
+	 }
+	 public BusinessType getBusinessType() // returns the business type  of this BankAccount
+	 {
+		 return this.businessType;
+	 }
+	 public void setLastName(String aName) //sets this BankAccount's last name to aName AFTER calling
+     // utils.MyUtils.properFormat() method on it remember no empty  names allowed
+	 {
+		 int count = 0;
+		 String temp = "";
+		 temp = utils.MyUtils.properFormat(aName);
+		 temp = temp.toLowerCase();
+		 for (int index = 0; index<temp.length(); index++)
+			{
+				char ch = temp.charAt(index);
+				if(Character.isLetter(ch))
+				{
+					count += 1;
+				}
+				
+			}
+		 if(count < 1 || temp.isEmpty())
+		 {
+			 this.lastName = DEFAULT_NAME;
+		 }
+		 else {
+			 String temp2 ="";
+			 String temp3 = "";
+			 temp2+= temp.charAt(0);
+			 temp2 = temp2.toUpperCase();
+			 for(int index= 1; index<temp.length(); index++)
+			 {
+				 char ch2 = temp.charAt(index);
+				 if(ch2 == ' ')
+				 {
+					 temp3 += temp.charAt(index+1);
+					 temp3 = temp3.toUpperCase();
+					 temp2 += " " + temp3;
+					 index++;
+				 }
+				 else
+				 {
+					 temp2 += ch2;
+				 }
+			 }
+			 this.lastName = temp2;
+		 }
+		
+	 }
+	 public void setFirstName(String aName) //sets this BankAccount's first name to aName AFTER calling
+     // utils.MyUtils.properFormat() method on it remember no empty  names allowed
+	 {
+		 int count = 0;
+		 String temp = "";
+		 temp = utils.MyUtils.properFormat(aName);
+		 temp = temp.toLowerCase();
+		 for (int index = 0; index<temp.length(); index++)
+			{
+				char ch = temp.charAt(index);
+				if(Character.isLetter(ch))
+				{
+					count += 1;
+				}
+				
+			}
+		 if(count < 1 || temp.isEmpty())
+		 {
+			 this.firstName = DEFAULT_NAME;
+			 return;
+		 }
+		 else {
+			 String temp2 ="";
+			 String temp3 = "";
+			 temp2+= temp.charAt(0);
+			 temp2 = temp2.toUpperCase();
+			 for(int index= 1; index<temp.length(); index++)
+			 {
+				 char ch2 = temp.charAt(index);
+				 if(ch2 == ' ')
+				 {
+					 temp3 += temp.charAt(index+1);
+					 temp3 = temp3.toUpperCase();
+					 temp2 += " " + temp3;
+					 index++;
+				 }
+				 else
+				 {
+					 temp2 += ch2;
+				 }
+			 }
+			 this.firstName = temp2;
+		 }
+	 }
+	 public void setAccountNumber(String aAccountNumber) // sets account number to received value or default
+            // if received value is invalid (must be 6 lowercaseletters and digits only).
+	 {
+		 int count = 0;
+		 for(int index =0; index<aAccountNumber.length();index++)
+		 {
+			 char ch = aAccountNumber.charAt(index);
+			 if(Character.isLetter(ch) || Character.isDigit(ch))
+			 {
+				 count += 1;
+			 }
+		 }
+		 if(count!= 6 || aAccountNumber.isEmpty())
+		 {
+			 this.accountNumber = DEFAULT_ACCOUNT_NUMBER;
+			 return;
+		 }
+		 else
+		 {
+			 aAccountNumber = aAccountNumber.toLowerCase();
+			 this.accountNumber = aAccountNumber;
+		 }
+	 }
+	 public void setBalance(double aBalance) // sets this BankAccount's balance to received balance
+	 {
+		 this.balance = aBalance;
+	 }
+	 public void setAccountType(AccountType aType)  //sets this BankAccount's account type to the received enum value
+	 {
+		 this.accountType = aType;
+	 }
+	 public void setBusinessType(BusinessType aType) // sets this BankAccount's business type to the received enum value
+	 {
+		 this.businessType = aType;
+	 }
+	 public boolean equals(Object obj)
+	 {
+		 if(this == obj)
+		 {
+			 return true;
+		 }
+		 if(obj==null) {
+			 return false;
+		 }
+		 if(!(obj instanceof BankAccount))
+		 {
+			 return false;
+		 }
+		 BankAccount bankAccount = (BankAccount)obj;
+		 if(!(this.getAccountNumber().equals(bankAccount.getAccountNumber())))
+		 {
+			 return false;
+		 }
+		 if(!(this.getLastName().equals(bankAccount.getLastName())))
+		 {
+			 return false;
+		 }
+		 if(!(this.getFirstName().equals(bankAccount.getFirstName())))
+		 {
+			 return false;
+		 }
+		 if(!(this.getAccountType().equals(bankAccount.getAccountType())))
+		 {
+			 return false;
+		 }
+		 if(!(this.getBusinessType().equals(bankAccount.getBusinessType())))
+		 {
+			 return false;
+		 }
+		 return true;
+	 }
+	 public int hashCode()
+	 {
+		 int mult = 31;
+		 int result = 133;
+		 result = result *mult + this.getAccountNumber().hashCode();
+		 result = result *mult + this.getFirstName().hashCode();
+		 result = result *mult + this.getLastName().hashCode();
+		 result = result *mult + this.getAccountType().hashCode();
+		 result = result *mult + this.getBusinessType().hashCode();
+		 return result;
+	 }
+	 public String toString() // returns a nicely formatted String of this BankAccount on same line
+	 {
+		 String temp = "";
+		 temp += "FIRST NAME: "+this.getFirstName();
+		 temp += " LAST NAME: "+this.getLastName();
+		 temp += " ACCOUNT NUMBER: "+ this.getAccountNumber();
+		 temp += " BALANCE: "+ this.getBalance();
+		 temp += " ACCOUNT TYPE: "+ this.getAccountType();
+		 temp += " BUSINESS TYPE: "+ this.getBusinessType();
+		 return temp;
+	 }
+}
+
+
+
+
+
+
+
+
+
+package asg5;
+
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+
+public class BankAccountUtilsImpl
+{
+ // receives:  inFile - a Scanner instance that is open and ready to read data from
+ //     file format: account number {newline} last name {newline} first name {newline},
+ //                  account type {space} business type {newLine} balance {newline}
+ // returns:  a single populated BankAccount instance with data from inFile if all data is there,
+ //      returns null if no data found (end of input) for a bank account or if
+ //     any mismatch of data or missing expected data
+	public static BankAccount readFromScanner(Scanner inFile)
+	{
+		String firstName ="";
+		String lastName ="";
+		String accountNumber ="";
+		double balance = 0;
+		String accountType = "";
+		String businessType = "";
+		if(inFile.hasNext())
+		{
+			accountNumber = inFile.nextLine();
+		}
+		else
+		{
+			return null;
+		}
+		if(inFile.hasNext())
+		{
+			lastName = inFile.nextLine();
+		}
+		else
+		{
+			return null;
+		}
+		if(inFile.hasNext())
+		{
+			firstName = inFile.nextLine();
+		}
+		else
+		{
+			return null;
+		}
+		if(inFile.hasNext())
+		{
+			accountType = inFile.next();
+		}
+		else
+		{
+			return null;
+		}
+		if(inFile.hasNext())
+		{
+			businessType = inFile.next();
+		}
+		else
+		{
+			return null;
+		}
+		if(inFile.hasNextDouble())
+		{
+			balance = inFile.nextDouble();
+			inFile.nextLine();
+			
+		}
+		else
+		{
+			return null;
+		}
+		AccountType newAccount = AccountType.valueOf(accountType);
+		BusinessType newBusinessType = BusinessType.valueOf(businessType);
+		BankAccount bankAccount = new BankAccount(accountNumber, lastName, firstName, newAccount, newBusinessType, balance );
+		return bankAccount;
+	}
+
+ // receives: outFile- a PrintWriter instance that is already open and ready to receive output
+ //           bankAccount - the instance of a bankAccount that is to be written to the output
+ // task: received bankAccount is written to outFile in  readable format by readFromScanner method
+ //       (so that it could be read back in later)
+ //writes in exact same order and format as readFromScanner uses:
+ //    file format:  account number {newline} 
+ //                  last name {newline} 
+ //                  first name {newline},
+ //                  account type {space} business type {newLine} 
+ //                  balance {newline} 
+	public static void writeToFile(PrintWriter outFile, BankAccount bankAccount)
+	{
+		outFile.println(bankAccount.getAccountNumber());
+		outFile.println(bankAccount.getLastName());
+		outFile.println(bankAccount.getFirstName());
+		outFile.println(bankAccount.getAccountType()+" "+bankAccount.getBusinessType());
+		outFile.println(bankAccount.getBalance());
+	}
+}
+
+
+
+
+
+
+
+
+Enter your name: sabur
+Test Assignment #5 Part 1 for Sabur self-certified by Sabur
+Testing for Sabur begins..
+Execution Begin Testing Constructors  at: 2019-10-16 22:19:07
+
+***** now testing toString(); 
+toString() of someAct: FIRST NAME: Bob LAST NAME: Lawrence ACCOUNT NUMBER: aabb12 BALANCE: 100.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: LLC
+End of testToString()
+Now testing setters for Sabur ...
+toString() of b1: FIRST NAME: Sammy LAST NAME: $$$$ ACCOUNT NUMBER: xxxxxx BALANCE: -100.0 ACCOUNT TYPE: MONEY_MARKET BUSINESS TYPE: PERSONAL
+
+********Now Testing readFromScanner in BankAccountUtilsImpl********
+error, cannot open file: bankaccountEmpty.txt now exiting....
+Execution Begin Testing Override of equals  at: 2019-10-16 22:19:07
+hashCode for b1: 85802318 == 85802318
+hashCode for b1: 2041243642 != 85802318
+hashCode for b1: 69632905 != 85802318
+hashCode for b1: -816271666 != 85802318
+hashCode for b1: 1601059680 != 85802318
+hashCode for b1: -573920188 != 85802318
+End of testing equals() override
+
+Enter your name: sabur
+Test Assignment #5 Part 1 for Sabur self-certified by Sabur
+Testing for Sabur begins..
+Execution Begin Testing Constructors  at: 2019-10-16 22:35:45
+
+***** now testing toString(); 
+toString() of someAct: FIRST NAME: Bob LAST NAME: Lawrence ACCOUNT NUMBER: aabb12 BALANCE: 100.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: LLC
+End of testToString()
+Now testing setters for Sabur ...
+toString() of b1: FIRST NAME: Sammy LAST NAME: $$$$ ACCOUNT NUMBER: xxxxxx BALANCE: -100.0 ACCOUNT TYPE: MONEY_MARKET BUSINESS TYPE: PERSONAL
+
+********Now Testing readFromScanner in BankAccountUtilsImpl********
+error, cannot open file: bankaccountEmpty.txt now exiting....
+Execution Begin Testing Override of equals  at: 2019-10-16 22:35:45
+hashCode for b1: 85802318 == 85802318
+hashCode for b1: 2041243642 != 85802318
+hashCode for b1: 69632905 != 85802318
+hashCode for b1: -816271666 != 85802318
+hashCode for b1: 1601059680 != 85802318
+hashCode for b1: -573920188 != 85802318
+End of testing equals() override
+
+********Now Testing BankAccountUtilsImpl********
+****Output of bankaccountShort.txt:
+****Output of bankaccount1.txt:
+bank account:  FIRST NAME: Anna Lisa LMaria LAST NAME: Martinez Gomez ACCOUNT NUMBER: 300rre BALANCE: 300.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: CORPORATE
+****Output of bankaccount.txt:
+bank account:  FIRST NAME: William Rogers LAST NAME: Howard ACCOUNT NUMBER: a500bc BALANCE: -50.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+bank account:  FIRST NAME: Linda Marie LAST NAME: Jones ACCOUNT NUMBER: y200cs BALANCE: 200.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+bank account:  FIRST NAME: Robert James LAST NAME: Lopez Martinez ACCOUNT NUMBER: r2100d BALANCE: 1000.0 ACCOUNT TYPE: MONEY_MARKET BUSINESS TYPE: CORPORATE
+bank account:  FIRST NAME: Jordan LAST NAME: Speith ACCOUNT NUMBER: pzg400 BALANCE: 400000.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+bank account:  FIRST NAME: Anna Lisa LMaria LAST NAME: Martinez Gomez ACCOUNT NUMBER: 300rre BALANCE: 300.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: CORPORATE
+
+*******Now testing that writeToFile method worked...********
+****Output of out1.txt should be a copy of bankaccount.txt:****
+bank account:  FIRST NAME: William Rogers LAST NAME: Howard ACCOUNT NUMBER: a500bc BALANCE: -50.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+bank account:  FIRST NAME: Linda Marie LAST NAME: Jones ACCOUNT NUMBER: y200cs BALANCE: 200.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+bank account:  FIRST NAME: Robert James LAST NAME: Lopez Martinez ACCOUNT NUMBER: r2100d BALANCE: 1000.0 ACCOUNT TYPE: MONEY_MARKET BUSINESS TYPE: CORPORATE
+bank account:  FIRST NAME: Jordan LAST NAME: Speith ACCOUNT NUMBER: pzg400 BALANCE: 400000.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+bank account:  FIRST NAME: Anna Lisa LLmaria LAST NAME: Martinez Gomez ACCOUNT NUMBER: 300rre BALANCE: 300.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: CORPORATE
+****Output of bankaccountError.txt:
+Ending IO Utils testing for: Sabur
+Execution End  at: 2019-10-16 22:35:45
+End of Asg#5 Part 1 certified testing for Sabur .......

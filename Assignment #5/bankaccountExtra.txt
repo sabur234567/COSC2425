@@ -1,0 +1,85 @@
+a500bc
+Howard
+william RogerS
+CHECKING  PERSONAL
+-50.00
+y200cs
+Jones
+Linda MARIE
+SAVINGS  LLC
+200.00
+r2100d
+Lopez Martinez
+Robert   JAMES
+MONEY_MARKET  CORPORATE
+1000.00
+pzg400
+SPEITH
+JorDAN  
+SAVINGS LLC
+400000.0
+300rre
+Martinez GOMEZ
+AnNa Lisa MAria
+CHECKING CORPORATE
+300.00
+xxyyzz
+Howard
+Joseph
+CHECKING  PERSONAL
+-50.00
+kc2222
+Johnson
+Lou Ann
+SAVINGS  LLC
+200.00
+mr34xv
+Cameron
+Robert   Joseph
+MONEY_MARKET  CORPORATE
+1000.00
+k32344
+Day
+Jason
+SAVINGS LLC
+400000.0
+3343rr
+Lafayette
+AnNa Lisa MAria
+CHECKING CORPORATE
+300.00
+d83rkw
+Garcia
+Joseph
+CHECKING  PERSONAL
+-50.00
+47824g
+Smith-Jones
+Lou Ann
+SAVINGS  LLC
+200.00
+pi6645
+Garcia
+Robert   Joseph
+MONEY_MARKET  CORPORATE
+1000.00
+gg92we
+Borne
+Jason
+SAVINGS LLC
+400000.0
+jk3499
+O'Toole
+Barbara AnNa Lisa MAria
+CHECKING CORPORATE
+300.00
+oo2233
+Raineuy
+Corey
+CHECKING CORPORATE
+300.00
+yt23ww
+Garza
+michael 
+CHECKING CORPORATE
+300.00

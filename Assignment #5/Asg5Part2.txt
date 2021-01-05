@@ -1,0 +1,614 @@
+Enter your name: sabur
+Test Assignment #5 Part 2 for Sabur self-certified by Sabur
+Testing for Sabur begins..
+Execution Begin Testing Constructors  at: 2019-10-21 18:22:17
+
+***** now testing toString(); 
+toString() of someAct: FIRST NAME: Bob LAST NAME: Lawrence ACCOUNT NUMBER: aabb12 BALANCE: 100.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: LLC
+End of testToString()
+Now testing setters for Sabur ...
+toString() of b1: FIRST NAME: Sammy LAST NAME: $$$$ ACCOUNT NUMBER: xxxxxx BALANCE: -100.0 ACCOUNT TYPE: MONEY_MARKET BUSINESS TYPE: PERSONAL
+Execution Begin Testing Override of equals  at: 2019-10-21 18:22:17
+hashCode for b1: 85802318 == 85802318
+hashCode for b1: 2041243642 != 85802318
+hashCode for b1: 69632905 != 85802318
+hashCode for b1: -816271666 != 85802318
+hashCode for b1: 1601059680 != 85802318
+hashCode for b1: -573920188 != 85802318
+
+********Now Testing BankAccountUtilsImpl********
+****Output of bankaccountShort.txt:
+****Output of bankaccount1.txt:
+bank account:  FIRST NAME: Anna Lisa LMaria LAST NAME: Martinez Gomez ACCOUNT NUMBER: 300rre BALANCE: 300.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: CORPORATE
+****Output of bankaccount.txt:
+bank account:  FIRST NAME: William Rogers LAST NAME: Howard ACCOUNT NUMBER: a500bc BALANCE: -50.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+bank account:  FIRST NAME: Linda Marie LAST NAME: Jones ACCOUNT NUMBER: y200cs BALANCE: 200.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+bank account:  FIRST NAME: Robert James LAST NAME: Lopez Martinez ACCOUNT NUMBER: r2100d BALANCE: 1000.0 ACCOUNT TYPE: MONEY_MARKET BUSINESS TYPE: CORPORATE
+bank account:  FIRST NAME: Jordan LAST NAME: Speith ACCOUNT NUMBER: pzg400 BALANCE: 400000.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+bank account:  FIRST NAME: Anna Lisa LMaria LAST NAME: Martinez Gomez ACCOUNT NUMBER: 300rre BALANCE: 300.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: CORPORATE
+
+*******Now testing that writeToFile method worked...********
+****Output of out1.txt should be a copy of bankaccount.txt:****
+bank account:  FIRST NAME: William Rogers LAST NAME: Howard ACCOUNT NUMBER: a500bc BALANCE: -50.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+bank account:  FIRST NAME: Linda Marie LAST NAME: Jones ACCOUNT NUMBER: y200cs BALANCE: 200.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+bank account:  FIRST NAME: Robert James LAST NAME: Lopez Martinez ACCOUNT NUMBER: r2100d BALANCE: 1000.0 ACCOUNT TYPE: MONEY_MARKET BUSINESS TYPE: CORPORATE
+bank account:  FIRST NAME: Jordan LAST NAME: Speith ACCOUNT NUMBER: pzg400 BALANCE: 400000.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+bank account:  FIRST NAME: Anna Lisa LLmaria LAST NAME: Martinez Gomez ACCOUNT NUMBER: 300rre BALANCE: 300.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: CORPORATE
+****Output of bankaccountError.txt:
+Ending IO Utils testing for: Sabur
+Execution End  at: 2019-10-21 18:22:17
+
+***** testing constructors and getters *****
+**** Testing getSize() **** 
+****Testing toString()****
+Here is list1:  should be empty
+
+Here is list2:  should have 1 account 
+FIRST NAME: Anna Lisa LMaria LAST NAME: Martinez Gomez ACCOUNT NUMBER: 300rre BALANCE: 300.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: CORPORATE
+
+Here is list3:  should have 5 accounts 
+FIRST NAME: William Rogers LAST NAME: Howard ACCOUNT NUMBER: a500bc BALANCE: -50.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+FIRST NAME: Linda Marie LAST NAME: Jones ACCOUNT NUMBER: y200cs BALANCE: 200.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Robert James LAST NAME: Lopez Martinez ACCOUNT NUMBER: r2100d BALANCE: 1000.0 ACCOUNT TYPE: MONEY_MARKET BUSINESS TYPE: CORPORATE
+FIRST NAME: Jordan LAST NAME: Speith ACCOUNT NUMBER: pzg400 BALANCE: 400000.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Anna Lisa LMaria LAST NAME: Martinez Gomez ACCOUNT NUMBER: 300rre BALANCE: 300.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: CORPORATE
+
+Here is list4:  should have 15 (MAX_SIZE) accounts 
+FIRST NAME: William Rogers LAST NAME: Howard ACCOUNT NUMBER: a500bc BALANCE: -50.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+FIRST NAME: Linda Marie LAST NAME: Jones ACCOUNT NUMBER: y200cs BALANCE: 200.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Robert James LAST NAME: Lopez Martinez ACCOUNT NUMBER: r2100d BALANCE: 1000.0 ACCOUNT TYPE: MONEY_MARKET BUSINESS TYPE: CORPORATE
+FIRST NAME: Jordan LAST NAME: Speith ACCOUNT NUMBER: pzg400 BALANCE: 400000.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Anna Lisa LMaria LAST NAME: Martinez Gomez ACCOUNT NUMBER: 300rre BALANCE: 300.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: CORPORATE
+FIRST NAME: Joseph LAST NAME: Howard ACCOUNT NUMBER: xxyyzz BALANCE: -50.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+FIRST NAME: Lou Ann LAST NAME: Johnson ACCOUNT NUMBER: kc2222 BALANCE: 200.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Robert Joseph LAST NAME: Cameron ACCOUNT NUMBER: mr34xv BALANCE: 1000.0 ACCOUNT TYPE: MONEY_MARKET BUSINESS TYPE: CORPORATE
+FIRST NAME: Jason LAST NAME: Day ACCOUNT NUMBER: k32344 BALANCE: 400000.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Anna Lisa LMaria LAST NAME: Lafayette ACCOUNT NUMBER: 3343rr BALANCE: 300.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: CORPORATE
+FIRST NAME: Joseph LAST NAME: Garcia ACCOUNT NUMBER: d83rkw BALANCE: -50.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+FIRST NAME: Lou Ann LAST NAME: Smith-jones ACCOUNT NUMBER: 47824g BALANCE: 200.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Robert Joseph LAST NAME: Garcia ACCOUNT NUMBER: pi6645 BALANCE: 1000.0 ACCOUNT TYPE: MONEY_MARKET BUSINESS TYPE: CORPORATE
+FIRST NAME: Jason LAST NAME: Borne ACCOUNT NUMBER: gg92we BALANCE: 400000.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Barbara Anna ALisa ALMaria LAST NAME: O'toole ACCOUNT NUMBER: jk3499 BALANCE: 300.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: CORPORATE
+
+**** End of testConstructorsAndtoString()****
+
+***** contains() get() find() Testing *****
+**** Testing getSize() **** 
+**** Testing contains() **** 
+**** Testing find() **** 
+**** Testing get() **** 
+Current List of BankAccounts: should be  4
+FIRST NAME: Alan D LAST NAME: Woods ACCOUNT NUMBER: dd623x BALANCE: 1430.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Mary LAST NAME: Lopez Garza ACCOUNT NUMBER: aabb22 BALANCE: -500.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+FIRST NAME: Mary LAST NAME: Lopez Garza ACCOUNT NUMBER: aamf93 BALANCE: 1255.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+FIRST NAME: John LAST NAME: Garcia ACCOUNT NUMBER: vbtr45 BALANCE: 900.0 ACCOUNT TYPE: MONEY_MARKET BUSINESS TYPE: CORPORATE
+
+Current List of Bank Accounts: should be 5
+FIRST NAME: Alan D LAST NAME: Woods ACCOUNT NUMBER: dd623x BALANCE: 1430.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Mary LAST NAME: Lopez Garza ACCOUNT NUMBER: aabb22 BALANCE: -500.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+FIRST NAME: Mary LAST NAME: Lopez Garza ACCOUNT NUMBER: aamf93 BALANCE: 1255.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+FIRST NAME: John LAST NAME: Garcia ACCOUNT NUMBER: vbtr45 BALANCE: 900.0 ACCOUNT TYPE: MONEY_MARKET BUSINESS TYPE: CORPORATE
+FIRST NAME: Marcos LAST NAME: Rogersstein ACCOUNT NUMBER: yy492x BALANCE: 3000.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: CORPORATE
+
+
+***** end of testing contains() get() find()   *****
+
+***** testing list criteria getters() *****
+****Testing getAccountsDeficient() ****
+Here are the deficient accounts in list3:
+FIRST NAME: William Rogers LAST NAME: Howard ACCOUNT NUMBER: a500bc BALANCE: -50.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+
+Here are the deficient accounts in list4:
+FIRST NAME: William Rogers LAST NAME: Howard ACCOUNT NUMBER: a500bc BALANCE: -50.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+FIRST NAME: Joseph LAST NAME: Howard ACCOUNT NUMBER: xxyyzz BALANCE: -50.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+FIRST NAME: Joseph LAST NAME: Garcia ACCOUNT NUMBER: d83rkw BALANCE: -50.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+
+****Testing getBankAccountsDeficient()****
+****Testing getAccountsWithMatchingName() ****
+****Testing getAccountsWithAccountType() ****
+****End of test list criteria Getters()****
+
+***** Add() Remove() Testing *****
+**** end of list remove testing 
+
+Testing List sort() and clear() 
+Before sort, default list:
+
+After sort, 0 element list:
+
+Before sort, 5 element list:
+FIRST NAME: William Rogers LAST NAME: Howard ACCOUNT NUMBER: a500bc BALANCE: -50.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+FIRST NAME: Linda Marie LAST NAME: Jones ACCOUNT NUMBER: y200cs BALANCE: 200.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Robert James LAST NAME: Lopez Martinez ACCOUNT NUMBER: r2100d BALANCE: 1000.0 ACCOUNT TYPE: MONEY_MARKET BUSINESS TYPE: CORPORATE
+FIRST NAME: Jordan LAST NAME: Speith ACCOUNT NUMBER: pzg400 BALANCE: 400000.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Anna Lisa LMaria LAST NAME: Martinez Gomez ACCOUNT NUMBER: 300rre BALANCE: 300.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: CORPORATE
+
+After sort, 5 element list:
+FIRST NAME: Anna Lisa LMaria LAST NAME: Martinez Gomez ACCOUNT NUMBER: 300rre BALANCE: 300.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: CORPORATE
+FIRST NAME: William Rogers LAST NAME: Howard ACCOUNT NUMBER: a500bc BALANCE: -50.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+FIRST NAME: Jordan LAST NAME: Speith ACCOUNT NUMBER: pzg400 BALANCE: 400000.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Robert James LAST NAME: Lopez Martinez ACCOUNT NUMBER: r2100d BALANCE: 1000.0 ACCOUNT TYPE: MONEY_MARKET BUSINESS TYPE: CORPORATE
+FIRST NAME: Linda Marie LAST NAME: Jones ACCOUNT NUMBER: y200cs BALANCE: 200.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+
+Before sort, 1 element list:
+FIRST NAME: Alan D LAST NAME: Woods ACCOUNT NUMBER: dd623x BALANCE: 1430.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+
+After sort, 1 element list:
+FIRST NAME: Alan D LAST NAME: Woods ACCOUNT NUMBER: dd623x BALANCE: 1430.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+
+Before sort, 2 element list:
+FIRST NAME: Alan D LAST NAME: Woods ACCOUNT NUMBER: dd623x BALANCE: 1430.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Mary LAST NAME: Lopez Garza ACCOUNT NUMBER: aabb22 BALANCE: -500.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+
+After sort, 2 element list:
+FIRST NAME: Mary LAST NAME: Lopez Garza ACCOUNT NUMBER: aabb22 BALANCE: -500.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+FIRST NAME: Alan D LAST NAME: Woods ACCOUNT NUMBER: dd623x BALANCE: 1430.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+
+Before sort, 3 element list:
+FIRST NAME: Alan D LAST NAME: Woods ACCOUNT NUMBER: dd623x BALANCE: 1430.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Mary LAST NAME: Lopez Garza ACCOUNT NUMBER: aabb22 BALANCE: -500.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+FIRST NAME: Anna Lisa LMaria LAST NAME: Martinez Gomez ACCOUNT NUMBER: 300rre BALANCE: 300.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: CORPORATE
+
+After sort, 3 element list:
+FIRST NAME: Anna Lisa LMaria LAST NAME: Martinez Gomez ACCOUNT NUMBER: 300rre BALANCE: 300.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: CORPORATE
+FIRST NAME: Mary LAST NAME: Lopez Garza ACCOUNT NUMBER: aabb22 BALANCE: -500.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+FIRST NAME: Alan D LAST NAME: Woods ACCOUNT NUMBER: dd623x BALANCE: 1430.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+
+After sorting the sorted list, 3 element list:
+FIRST NAME: Anna Lisa LMaria LAST NAME: Martinez Gomez ACCOUNT NUMBER: 300rre BALANCE: 300.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: CORPORATE
+FIRST NAME: Mary LAST NAME: Lopez Garza ACCOUNT NUMBER: aabb22 BALANCE: -500.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+FIRST NAME: Alan D LAST NAME: Woods ACCOUNT NUMBER: dd623x BALANCE: 1430.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+
+Max size list: 15 accounts 
+FIRST NAME: William Rogers LAST NAME: Howard ACCOUNT NUMBER: a500bc BALANCE: -50.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+FIRST NAME: Linda Marie LAST NAME: Jones ACCOUNT NUMBER: y200cs BALANCE: 200.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Robert James LAST NAME: Lopez Martinez ACCOUNT NUMBER: r2100d BALANCE: 1000.0 ACCOUNT TYPE: MONEY_MARKET BUSINESS TYPE: CORPORATE
+FIRST NAME: Jordan LAST NAME: Speith ACCOUNT NUMBER: pzg400 BALANCE: 400000.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Anna Lisa LMaria LAST NAME: Martinez Gomez ACCOUNT NUMBER: 300rre BALANCE: 300.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: CORPORATE
+FIRST NAME: Joseph LAST NAME: Howard ACCOUNT NUMBER: xxyyzz BALANCE: -50.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+FIRST NAME: Lou Ann LAST NAME: Johnson ACCOUNT NUMBER: kc2222 BALANCE: 200.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Robert Joseph LAST NAME: Cameron ACCOUNT NUMBER: mr34xv BALANCE: 1000.0 ACCOUNT TYPE: MONEY_MARKET BUSINESS TYPE: CORPORATE
+FIRST NAME: Jason LAST NAME: Day ACCOUNT NUMBER: k32344 BALANCE: 400000.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Anna Lisa LMaria LAST NAME: Lafayette ACCOUNT NUMBER: 3343rr BALANCE: 300.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: CORPORATE
+FIRST NAME: Joseph LAST NAME: Garcia ACCOUNT NUMBER: d83rkw BALANCE: -50.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+FIRST NAME: Lou Ann LAST NAME: Smith-jones ACCOUNT NUMBER: 47824g BALANCE: 200.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Robert Joseph LAST NAME: Garcia ACCOUNT NUMBER: pi6645 BALANCE: 1000.0 ACCOUNT TYPE: MONEY_MARKET BUSINESS TYPE: CORPORATE
+FIRST NAME: Jason LAST NAME: Borne ACCOUNT NUMBER: gg92we BALANCE: 400000.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Barbara Anna ALisa ALMaria LAST NAME: O'toole ACCOUNT NUMBER: jk3499 BALANCE: 300.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: CORPORATE
+
+Max size list: 15 SORTED accounts 
+FIRST NAME: Anna Lisa LMaria LAST NAME: Martinez Gomez ACCOUNT NUMBER: 300rre BALANCE: 300.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: CORPORATE
+FIRST NAME: Anna Lisa LMaria LAST NAME: Lafayette ACCOUNT NUMBER: 3343rr BALANCE: 300.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: CORPORATE
+FIRST NAME: Lou Ann LAST NAME: Smith-jones ACCOUNT NUMBER: 47824g BALANCE: 200.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: William Rogers LAST NAME: Howard ACCOUNT NUMBER: a500bc BALANCE: -50.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+FIRST NAME: Joseph LAST NAME: Garcia ACCOUNT NUMBER: d83rkw BALANCE: -50.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+FIRST NAME: Jason LAST NAME: Borne ACCOUNT NUMBER: gg92we BALANCE: 400000.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Barbara Anna ALisa ALMaria LAST NAME: O'toole ACCOUNT NUMBER: jk3499 BALANCE: 300.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: CORPORATE
+FIRST NAME: Jason LAST NAME: Day ACCOUNT NUMBER: k32344 BALANCE: 400000.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Lou Ann LAST NAME: Johnson ACCOUNT NUMBER: kc2222 BALANCE: 200.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Robert Joseph LAST NAME: Cameron ACCOUNT NUMBER: mr34xv BALANCE: 1000.0 ACCOUNT TYPE: MONEY_MARKET BUSINESS TYPE: CORPORATE
+FIRST NAME: Robert Joseph LAST NAME: Garcia ACCOUNT NUMBER: pi6645 BALANCE: 1000.0 ACCOUNT TYPE: MONEY_MARKET BUSINESS TYPE: CORPORATE
+FIRST NAME: Jordan LAST NAME: Speith ACCOUNT NUMBER: pzg400 BALANCE: 400000.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+FIRST NAME: Robert James LAST NAME: Lopez Martinez ACCOUNT NUMBER: r2100d BALANCE: 1000.0 ACCOUNT TYPE: MONEY_MARKET BUSINESS TYPE: CORPORATE
+FIRST NAME: Joseph LAST NAME: Howard ACCOUNT NUMBER: xxyyzz BALANCE: -50.0 ACCOUNT TYPE: CHECKING BUSINESS TYPE: PERSONAL
+FIRST NAME: Linda Marie LAST NAME: Jones ACCOUNT NUMBER: y200cs BALANCE: 200.0 ACCOUNT TYPE: SAVINGS BUSINESS TYPE: LLC
+
+*** End of testing List sort() and clear() 
+End of Asg#5 Part 2 certified testing for Sabur .......
+
+
+
+
+
+
+package asg5;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
+
+import utils.MyUtils;
+//implementation
+public class BankAccountListImpl implements BankAccountList {
+	private BankAccount [] bankArray;
+	private int numBanks;
+	// first constructor
+	public BankAccountListImpl()
+	{
+		this.bankArray = new BankAccount[MAX_SIZE];
+		this.numBanks=0;
+	}
+	//Second constructor, takes in filename then calls readFromScanner to read the current instance
+	public BankAccountListImpl(String filename)
+	{
+		Scanner inFile = null;
+		this.numBanks =0;
+		this.bankArray = new BankAccount[MAX_SIZE];
+		try
+		{
+			inFile = new Scanner(new File(filename));
+		}
+		catch(IOException e)
+		{
+			System.out.println("Cannot open file " + filename);
+			return;
+		}
+		while(inFile.hasNext())
+		{
+			BankAccount bank = BankAccountUtilsImpl.readFromScanner(inFile);
+			if(bank!=null)
+			{
+				this.add(bank);
+			}
+			
+		}
+		
+	}
+	// overrides the current instance 
+	public String toString()
+	{
+		String temp ="";
+		for(int index=0; index<this.numBanks;index++)
+		{
+			temp+= bankArray[index]+ "\n";
+		}
+		return temp;
+	}
+	
+	public int getSize()
+
+	// receives: a BankAccount instance that is NOT null
+	// returns:  true if received bankaccount matches any bankaccount in this list, 
+	//assumes equals is overloaded in BankAccount class 
+	 //returns false if received bankaccount is not currently in this list
+	 {
+		 return numBanks;
+	 }
+	public boolean contains(BankAccount bankaccount)
+	//receives: a BankAccount instance that is NOT null
+	//task:   bankaccount is added to this list if not already contained in this list
+	//      (bank accounts must be unique for each account number)
+	//returns:  true if bankaccount was added, false if no room in the list or duplicate
+	// bankaccount is found in the list
+	// a bankaccount is a duplicate if it has the same account number for our purposes
+	// Example use:
+	//   BankAccountList list = new BankAccountListImpl();
+	//   boolean result = list.add(new BankAccount("1122AA","Garcia","Joey",0.0,AccountType.CHECKING, BusinessType.PERSONAL));
+	//   assertTrue(result == true);
+	{
+		for(int index=0;index<this.numBanks;index++)
+		{
+			if(bankArray[index].equals(bankaccount))
+			{
+				return true;
+			}
+		}
+		return false;
+		
+	}
+	//receives: a BankAccount instance that is NOT null
+		//task:   bankaccount is added to this list if not already contained in this list
+		//      (bank accounts must be unique for each account number)
+		//returns:  true if bankaccount was added, false if no room in the list or duplicate
+		//      bankaccount is found in the list
+		//      a bankaccount is a duplicate if it has the same account number for our purposes
+		//      Example use:
+		//        BankAccountList list = new BankAccountListImpl();
+		//        boolean result = list.add(new BankAccount("1122AA","Garcia","Joey",0.0,AccountType.CHECKING, BusinessType.PERSONAL));
+		//        assertTrue(result == true)
+	public boolean add(BankAccount bankaccount)
+	{
+		if(numBanks>= MAX_SIZE)
+		{
+			return false;
+		}
+		if(this.contains(bankaccount))
+		{
+			return false;
+		}
+		this.bankArray[numBanks]=bankaccount;
+		this.numBanks ++;
+		return true;
+	}
+	// receives: a positon (int) in this bank account list
+		// returns: the bankaccount in the list at given position.
+		//       uses zero-based positions, so 0 is the position of the first bank account in the list
+		//       returns null if received position is out of range (0 to less than size of list.)
+		//  Example use:
+		//        BankAccountList list = new BankAccountListImpl();
+		//        BankAccount b2 = new BankAccount("1122AA","Garcia","Joey",0.0,AccountType.CHECKING, BusinessType.PERSONAL);
+		//        boolean result = list.add(b2);
+		// 		  BankAccount b1 = list.get(0);
+		//        assertTrue(b1.equals(b2));
+	public BankAccount get(int position)
+	{
+		if(position<0 || position>= numBanks)
+		{
+			return null;
+		}
+		return bankArray[position];
+	}
+	
+	// receives: a BankAccount instance (not null)
+		// returns:  the position of received bankaccount in the list (0 based positioning)
+		//       (uses overloaded equals when matching)
+		//       returns -1 if received bankaccount is not found in current list at any position
+		//        BankAccountList list = new BankAccountListImpl();
+		//        BankAccount b2 = new BankAccount("1122AA","Garcia","Joey",0.0,AccountType.CHECKING, BusinessType.PERSONAL);
+		//        boolean result = list.add(b2);
+		//		  int position = list2.find(b2);
+		//	      assertTrue(position == 0);
+	public int find(BankAccount bankaccount)
+	{
+		int position = -1;
+		for(int index=0; index<this.numBanks;index++)
+		{
+			if(bankArray[index].equals(bankaccount))
+			{
+				position = index;
+				break;
+			}
+		}
+		return position;
+	}
+	
+	// receives: nothing
+	// returns: a String containing a list (1 bank account per line) of bank accounts
+	//      that have a balance below 0.0
+	//      returns an EMPTY String if NO bank accounts have a balance less than 0.0
+	//	    Example use:
+	//	    BankAccountList list = new BankAccountListImpl();
+	//        BankAccount b2 = new BankAccount("1122AA","Garcia","Joey",0.0,AccountType.CHECKING, BusinessType.PERSONAL);
+	//        boolean result = list.add(b2);
+	//        assertTrue(result == true);
+	// 		String list1 = list.getBankAccountsDeficient();
+	//      assertTrue(list1.equals(""));
+	public String getBankAccountsDeficient()
+	{
+		String temp = "";
+		
+		for(int index=0; index<this.numBanks;index++)
+		{
+			if(bankArray[index].getBalance() < 0)
+			{
+				temp+= bankArray[index]+ "\n";
+			}
+		}
+		return temp;
+	}
+	
+	// receives: aAccountType, a bank account type
+	// returns: a String containing a list (1 bank account per line) of bank accounts
+	//       that are of the received account type.
+	//    Example use:
+	//	BankAccountList list = new BankAccountListImpl();
+	//      BankAccount b2 = new BankAccount("1122AA","Garcia","Joey",0.0,AccountType.CHECKING, BusinessType.PERSONAL);
+	//      boolean result = list.add(b2);
+	//      assertTrue(result == true);
+	// 		String list1 = list.getBankAccountsWithAccountType(AccountType.CHECKING);
+	//      assertTrue(MyUtils.numberLines(list1) == 1);
+	public String getBankAccountsWithAccountType(AccountType aAccountType)
+	{
+		String temp = "";
+		for(int index=0;index<this.numBanks;index++)
+		{
+			if(bankArray[index].getAccountType().equals(aAccountType))
+			{
+				temp+= bankArray[index] + "\n";
+			}
+		}
+		return temp;
+	}
+	
+	// receives: a last name (String)
+	// returns: a String containing a list (1 bank account per line) of bank accounts
+	//      with name matching  received (case in-sensitive) String
+	//      if no matches exist, returns empty string
+	//  Example use:
+	//	BankAccountList list = new BankAccountListImpl();
+	//      BankAccount b2 = new BankAccount("1122AA","Garcia","Joey",0.0,AccountType.CHECKING, BusinessType.PERSONAL);
+	//      boolean result = list.add(b2);
+	//      assertTrue(result == true);
+	// 		String accountNames = list.getBankAccountsWithMatchingLastName("GARCIA");
+	//      assertTrue(MyUtils.numberLines(accountNames) == 1);
+
+	public String getBankAccountsWithMatchingLastName(String aName)
+	{
+
+		String temp = "";
+		for(int index=0;index<this.numBanks;index++)
+		{
+			if(MyUtils.properFormat(bankArray[index].getLastName()).equals(MyUtils.properFormat(aName)))
+			{
+				temp+= bankArray[index] + "\n";
+			}
+		}
+		return temp;
+	}
+	// receives: nothing
+	// returns: nothing
+	// task:   this BankAccountList is sorted by account number from lowest to highest (alphabetically)
+	//  Example use (give 2 more):
+	//	BankAccountList list = new BankAccountListImpl();
+	//      BankAccount b2 = new BankAccount("1122AA","Garcia","Joey",0.0,AccountType.CHECKING, BusinessType.PERSONAL);
+	   //      BankAccount b3 = new BankAccount("ddKK33"," ROGERS MetCALF","Mary Louise ",0.0,AccountType.SAVINGS, BusinessType.PERSONAL); 
+	   //      boolean result = list.add(b3);
+	//      assertTrue(result == true);
+	//      boolean result = list.add(b2);
+	//      assertTrue(result == true);
+	// 	list.sort();
+	//      System.out.println("here is the sorted list:\n" + list);  // should be in appropriate order smallest acct number to largest
+	//       should output: 1122aa  Garcia, Joey 0.0 CHECKING -- PERSONAL
+	//                      ddkk33  Rogers Metcalf, Mary Louise  0.0 SAVINGS -- PERSONAL
+	public void sort()
+	{
+		for(int index=0; index<numBanks-1; index++)
+		{
+			int min = index;
+			for(int k = index + 1; k<numBanks; k++)
+			{
+				if(bankArray[k].getAccountNumber().compareTo(bankArray[min].getAccountNumber())<0)
+				{
+					min = k;
+				}
+			}
+			BankAccount temp = bankArray[min];
+			bankArray[min] = bankArray[index];
+			bankArray[index] = temp;
+		}
+	}
+	
+	// receives: a BankAccount instance, not null
+	 // returns:   a BankAccount instance  in this list that is found that MATCHES the
+	//      received bankaccount (assume equals is overloaded for BankAccount)
+	//      the BankAccount instance in the list that matched received bankaccount is removed
+	//       from this list AND RETURNED.
+	//       If no BankAccount instance is found that matches received bankaccount
+	//       then null is RETURNED
+  //    Example use:
+	   //      BankAccountList list = new BankAccountListImpl();
+		//      BankAccount b2 = new BankAccount("1122AA","Garcia","Joey",0.0,AccountType.CHECKING, BusinessType.PERSONAL);
+	       //      BankAccount b3 = new BankAccount("ddKK33"," ROGERS MetCALF","Mary Louise ",0.0,AccountType.SAVINGS, BusinessType.PERSONAL);
+		//      boolean result = list.add(b3);
+		//      assertTrue(result == true);
+	        //      boolean result = list.add(b2);
+	        //      assertTrue(result == true);
+	        //      assertTrue(list.getSize() ==2);
+	        //      BankAccount remAct = list.remove(b2);
+	        //      assertTrue(remAct.equals(b2));
+	        //      assertTrue(list.getSize() == 1);
+	        //     Example use #2:
+	        //        remAct = list.remove(b2);
+	        //        assertTrue(remAct == null);
+	public BankAccount remove(BankAccount bankaccount)
+	{    
+	    int index = this.find(bankaccount);
+	    if(index!=-1)
+	    {
+	    	BankAccount retValue = bankArray[index];
+	    	bankArray[index] = bankArray[numBanks-1];
+	    	numBanks--;
+	    	return retValue;
+	    }
+	    else {
+	    	return null;
+	    }
+	}
+	
+
+    // receives: nothing
+    // returns: nothing
+    // task:  this BankAccountList instance is made to be empty
+    //        clear out all bank accounts from this instance
+    public void clear()
+    {
+    	numBanks =0;
+    }
+    
+}
+
+
+
+
+
+package asg5;
+
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+
+public class BankAccountUtilsImpl
+{
+ // receives:  inFile - a Scanner instance that is open and ready to read data from
+ //     file format: account number {newline} last name {newline} first name {newline},
+ //                  account type {space} business type {newLine} balance {newline}
+ // returns:  a single populated BankAccount instance with data from inFile if all data is there,
+ //      returns null if no data found (end of input) for a bank account or if
+ //     any mismatch of data or missing expected data
+	public static BankAccount readFromScanner(Scanner inFile)
+	{
+		String firstName ="";
+		String lastName ="";
+		String accountNumber ="";
+		double balance = 0;
+		String accountType = "";
+		String businessType = "";
+		if(inFile.hasNext())
+		{
+			accountNumber = inFile.nextLine();
+		}
+		else
+		{
+			return null;
+		}
+		if(inFile.hasNext())
+		{
+			lastName = inFile.nextLine();
+		}
+		else
+		{
+			return null;
+		}
+		if(inFile.hasNext())
+		{
+			firstName = inFile.nextLine();
+		}
+		else
+		{
+			return null;
+		}
+		if(inFile.hasNext())
+		{
+			accountType = inFile.next();
+		}
+		else
+		{
+			return null;
+		}
+		if(inFile.hasNext())
+		{
+			businessType = inFile.next();
+		}
+		else
+		{
+			return null;
+		}
+		if(inFile.hasNextDouble())
+		{
+			balance = inFile.nextDouble();
+			inFile.nextLine();
+			
+		}
+		else
+		{
+			return null;
+		}
+		AccountType newAccount = AccountType.valueOf(accountType);
+		BusinessType newBusinessType = BusinessType.valueOf(businessType);
+		BankAccount bankAccount = new BankAccount(accountNumber, lastName, firstName, newAccount, newBusinessType, balance );
+		return bankAccount;
+	}
+
+ // receives: outFile- a PrintWriter instance that is already open and ready to receive output
+ //           bankAccount - the instance of a bankAccount that is to be written to the output
+ // task: received bankAccount is written to outFile in  readable format by readFromScanner method
+ //       (so that it could be read back in later)
+ //writes in exact same order and format as readFromScanner uses:
+ //    file format:  account number {newline} 
+ //                  last name {newline} 
+ //                  first name {newline},
+ //                  account type {space} business type {newLine} 
+ //                  balance {newline} 
+	public static void writeToFile(PrintWriter outFile, BankAccount bankAccount)
+	{
+		outFile.println(bankAccount.getAccountNumber());
+		outFile.println(bankAccount.getLastName());
+		outFile.println(bankAccount.getFirstName());
+		outFile.println(bankAccount.getAccountType()+" "+bankAccount.getBusinessType());
+		outFile.println(bankAccount.getBalance());
+	}
+}
+
+
+
+

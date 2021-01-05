@@ -1,0 +1,25 @@
+a500bc
+Howard
+William Rogers
+CHECKING PERSONAL
+-50.0
+y200cs
+Jones
+Linda Marie
+SAVINGS LLC
+200.0
+r2100d
+Lopez Martinez
+Robert James
+MONEY_MARKET CORPORATE
+1000.0
+pzg400
+Speith
+Jordan
+SAVINGS LLC
+400000.0
+300rre
+Martinez Gomez
+Anna Lisa LMaria
+CHECKING CORPORATE
+300.0
