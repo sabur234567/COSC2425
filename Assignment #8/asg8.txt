@@ -1,0 +1,363 @@
+Enter your name: sabur
+Execution begins for Sabur  at: 2019-12-06 22:32:19
+Begin operands tests
+
+
+package biginteger;
+
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.EventListenerList;
+
+
+import biginteger.BigIntegerEngine;
+import stack.StackList;
+import stack.StackListLinkedListImpl;
+
+public class BigIntegerEngineImpl implements BigIntegerEngine{
+	
+	private StackList<String> stack;
+	private EventListenerList eventListenerList;  // stores one or more event listener
+	private final ChangeEvent CHANGE_EVENT = new ChangeEvent(this);
+	private String actionText;
+	
+	// Note: an engine keeps the sum of all operands in the engine updated at all times 
+	//even as operands are modified
+	public BigIntegerEngineImpl()
+	{
+		stack = new StackListLinkedListImpl<String>(BigIntegerEngine.MAX_OPERANDS);
+		this.eventListenerList = new EventListenerList();
+		this.actionText="Stack is EMPTY";
+	}
+	public BigIntegerEngineImpl(int aMax)
+	{
+		if(aMax>=0 && aMax <=StackList.LARGEST)
+		{
+			stack = new StackListLinkedListImpl<String>(aMax);
+		}
+		else
+		{
+			stack = new StackListLinkedListImpl<String>(BigIntegerEngine.MAX_OPERANDS);
+		}
+		this.eventListenerList = new EventListenerList();
+		this.actionText="Stack is EMPTY";
+	}
+	//toString
+	public String toString()
+	{
+		return this.stack.toString();
+	}
+	public String getActionText()
+	{
+		return this.actionText;
+	}
+
+	// receives: nothing
+	//returns: the String representation of the received operandNumber, returns empty string if operandNumber is invalid
+	//       invalid if operandNumber is not within:  1 <= operandNumber <= MAX_OPERANDS
+	public String getOperand(int operandNumber)
+	{
+		if(operandNumber <= 0 || operandNumber > MAX_OPERANDS)
+		{
+			return "";
+		}
+		else
+		{
+			String operand = String.valueOf(operandNumber);
+			return operand;
+		}
+	}
+
+	//receives: nothing
+		// returns: nothing
+		// task: all operands, from 1 to MAX_OPERANDS are set to "0"
+	public void clearOperands() {
+		this.stack.clear();
+		this.actionText = "CLEARD STACK: ";
+		
+		this.fireChangeEvent(CHANGE_EVENT);
+		
+	}
+
+	//receives: operandNumber and value to set operandNumber to
+	//        verifies that operandNumber>=1 and operandNumber <= MAX_OPERANDS
+	// task: operandNumber given is set to operandValue if both operandValue is a valid integer string and 
+	//      operandNumber is in range 1 to MAX_OPERANDS inclusive.
+	//returns:  false if either argument is invalid and does not set anything, otherwise returns true
+	public boolean setOperand(int operandNumber, String operandValue) {
+		if(operandNumber <= 0 || operandNumber > MAX_OPERANDS)
+		{
+			return false;
+		}
+		char c=' ';
+		for(int index =0; index<operandValue.length();index++)
+		{
+			c = operandValue.charAt(index);
+			if(!Character.isDigit(c))
+			{
+				return false;
+			}
+		}
+
+		return true;
+		
+	}
+
+	public String getSum() {
+		
+		return null;
+	}
+
+	// EVENT CHANGES
+	// boiler plate standard methods for use with a model - adds change listener instance to this model's listener list
+	public void addChangeListener(ChangeListener stackEngineListener) {
+		eventListenerList.add(ChangeListener.class, stackEngineListener);
+		
+	}
+
+	// removes change listener from this model's listener list.
+	public void removeChangeListener(ChangeListener stackEngineListener) {
+		eventListenerList.remove(ChangeListener.class, stackEngineListener);
+		
+	}
+
+	// raises or fires off a change event so that any listeners can hear it and thus update their situation (ie the view)
+	public void fireChangeEvent(ChangeEvent event) {
+		// Guaranteed to return a non-null array
+		Object[] listeners = eventListenerList.getListenerList();
+		// Process the listeners last to first, notifying
+		// those that are interested in this event
+		for (int i = listeners.length-2; i>=0; i-=2) {
+			if (listeners[i]==ChangeListener.class) {
+				((ChangeListener)listeners[i+1]).stateChanged(event);
+			}
+		}
+		
+	}
+	
+}
+
+
+
+
+
+
+
+
+package biginteger;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
+import biginteger.BigIntegerView;
+
+import biginteger.BigIntegerFrame;
+
+public class BigIntegerController extends JPanel implements ActionListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	JButton getSum;
+	JButton setOperand;
+	JButton clear;
+	
+
+	JPanel stackButtonPanel ;
+
+	BigIntegerView stackPanel;
+	BigIntegerEngine bigintEngine;
+
+	ChangeListener bigintEngineListener;
+
+
+	// default constructor, receives the stack engine model it is displaying and controlling
+	public BigIntegerController(BigIntegerEngine aBigIntEngine)
+	{
+		super();
+		this.setPreferredSize(new Dimension(BigIntegerFrame.FRAME_WIDTH-20, BigIntegerFrame.FRAME_HEIGHT - 100));
+		this.setLayout(new BorderLayout());
+		this.bigintEngine = aBigIntEngine;
+		
+		//create a "listener" for the stack engine, so if that engine changes, it can respond
+		bigintEngineListener = new ChangeListener()
+		{ 
+			public void stateChanged(ChangeEvent e){
+				update();
+			}
+
+		};
+		this.bigintEngine.addChangeListener(bigintEngineListener); // add listener to stackEngine for notification
+		init();
+	}
+	
+	private void init() 
+	{
+		this.clear = new JButton("Clear");
+		this.setOperand = new JButton("Set Operand");
+		this.getSum = new JButton("Get the Sum");
+	
+		this.stackPanel = new BigIntegerView(bigintEngine);  // create a Stack Panel (view) and send it the engine it is "modeling"
+
+		stackButtonPanel = new JPanel();		  // used to hold all stack operation buttons
+		stackButtonPanel.setLayout(new GridLayout(2,4));  // 1 row of 6 (change as more or less buttons are used)
+		stackButtonPanel.add(clear);			// now add buttons to the panel
+		stackButtonPanel.add(setOperand);
+		stackButtonPanel.add(getSum);
+	
+		this.add(stackButtonPanel, BorderLayout.NORTH);  // this is the controller panel, add the stack button panel to the top across
+		this.add(stackPanel,  BorderLayout.EAST);		  // add remaining components to this controller panel
+		this.add(stackPanel, BorderLayout.WEST);
+		this.add(stackButtonPanel,  BorderLayout.SOUTH);  // add big ints button panel to the bottom
+		
+		getSum.addActionListener(this); 
+		setOperand.addActionListener(this);
+		clear.addActionListener(this);
+
+
+	}
+	//method called when an ChangeEvent is fired in the model
+		// updates data on the view which will reflect any changes made to the model
+	private void update() 
+	{			// repaint all models (engines)
+		repaint();
+	}
+	
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// HANDLES all button actions, listeners for each button
+	
+	}
+
+}
+
+
+
+
+
+
+
+package biginteger;
+
+import java.awt.FlowLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+import javax.swing.JFrame;
+
+import biginteger.BigIntegerEngine;
+import biginteger.BigIntegerEngineImpl;
+import biginteger.BigIntegerController;
+import biginteger.BigIntegerFrame;
+
+public class BigIntegerFrame {
+	public static final int FRAME_WIDTH=800;
+	public static final int FRAME_HEIGHT=600;
+	public static void main(String[]args)
+	{
+	BigIntegerEngine bigintEngine = new BigIntegerEngineImpl(4);
+	BigIntegerController controller = new BigIntegerController(bigintEngine);
+	JFrame frame = new JFrame("Big Integer GUI -- Sabur Khan");
+	frame.setLayout(new FlowLayout());
+	frame.addWindowListener( new WindowAdapter() {
+		public void windowClosing(WindowEvent windowEvent)
+		{
+			System.exit(0);
+		}
+	});
+	frame.getContentPane().add(controller);
+	frame.setSize(BigIntegerFrame.FRAME_WIDTH,BigIntegerFrame.FRAME_HEIGHT);
+	frame.setVisible(true);
+   }
+}
+
+
+
+
+
+
+
+package biginteger;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+import javax.swing.JPanel;
+
+public class BigIntegerView extends JPanel 
+{
+	BigIntegerEngine engine;
+	final int MYWIDTH=BigIntegerFrame.FRAME_WIDTH;
+	final int MYHEIGHT=BigIntegerFrame.FRAME_HEIGHT-150;
+	public BigIntegerView(BigIntegerEngine theEngine)
+	{ 
+		super();
+		this.engine = theEngine;
+		this.setBackground(new Color(137, 236, 67));
+		this.setPreferredSize(new Dimension(MYWIDTH, MYHEIGHT));
+		
+		this.repaint();
+	}
+	public void paintComponent(Graphics g)
+	{
+		String theOperands = engine.toString(); // get all operands
+	    // set up a way to walk through each operand in the engine
+		// using StringTokenizer class with delimiter "\n" between operands
+		StringTokenizer tkn = new StringTokenizer(theOperands, "\n");
+		
+		g.setFont(new Font("default", Font.BOLD, 16));
+		int size = BigIntegerEngine.MAX_OPERANDS;
+		if(size == 0)
+		{
+			g.drawString("OPERAND List is EMPTY", 20,  20);
+			return;
+		}
+		
+		int ht = MYHEIGHT/BigIntegerEngine.MAX_OPERANDS;
+		int height= 20;
+		int width = 10;
+		// draw the stack element container as rectangles
+		for(int i=0; i<BigIntegerEngine.MAX_OPERANDS; i++)
+		{   
+			g.drawRect(20, height-10,MYWIDTH/2-50,ht );
+			
+			height += ht;
+		}
+		// now draw the values in the stack in the contains from top to bottom
+		height= (BigIntegerEngine.MAX_OPERANDS-size)*ht+25;
+		for(int i=0; i<size; i++)
+		{  
+			String out = tkn.nextToken();
+			out = "["+(i+1)+"]  " + out;
+			g.drawString(out, width+15,  height);
+			height += ht;
+		}
+		String sum = engine.getSum();
+		g.setColor(Color.CYAN);
+		g.fillRect(MYWIDTH/2, 20, MYWIDTH/2-50, 50);
+		g.setColor(Color.BLACK);
+		g.drawString("SUM: " + sum, MYWIDTH/2+10,  60);
+		Font font = new Font("Comic Sans MS", Font.BOLD, 12);
+		g.setFont(font);
+		g.drawString("Instructor copy", MYWIDTH-200, MYHEIGHT-10);
+		}
+}
+
+
+
+
