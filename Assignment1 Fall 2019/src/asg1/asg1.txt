@@ -1,0 +1,206 @@
+Please enter your age:
+65
+You are eligable to vote.
+You are eligable to become the President of the United States.
+You are eligable to qualify for Medicare.
+Pleas enter your gpa:
+1.9
+Your gpa is causing probationary status.
+Please enter your hometown now:
+Miami
+Youre from, Miami. Welcome! Enjoy your time here.
+MIAMI
+5
+
+Please enter your age:
+25
+You are eligable to vote.
+You are paying extra for car insurance.
+Pleas enter your gpa:
+4.0
+Congratulations, you're eligable for the Dean's list.
+Gpa is at least at satisfactory level.
+Please enter your hometown now:
+Los Angeles
+Youre from, Los Angeles. Welcome! Enjoy your time here.
+LOS ANGELES
+11
+
+The sum of the numbers 1-100 is: 5050
+The sum of the numbers 1-2000 that are divisable by 13 is: 153153
+The sum of squares from numbers 1-50 is: 42925
+
+Enter the number you want to test that is even or odd.
+13
+ODD
+
+Enter the number you want to test that is even or odd.
+-2
+EVEN
+
+Over
+Average
+Below
+Average
+
+
+
+
+
+/**
+ * 
+ */
+package asg1;
+
+import java.util.Scanner;
+
+/**
+ * @author Sabur Khan
+ *
+ */
+public class Asg1Part1 {
+	public static void main(String[] args)
+	{
+		int age = 0;
+		double gpa = 0.0;
+		String homeTown = "";
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Please enter your age:");
+		age = scanner.nextInt();		
+		scanner.nextLine();				//throws away the enter key
+		if (age >= 18)
+		{		
+			System.out.println("You are eligable to vote.");
+		}
+		if (age >= 35)
+		{
+			System.out.println("You are eligable to become the President of the United States.");
+		}
+		if (age>=65)
+		{
+			System.out.println("You are eligable to qualify for Medicare.");
+		}
+		if(age >= 16 && age <= 25)
+		{
+			System.out.println("You are paying extra for car insurance.");
+		}
+		System.out.println("Pleas enter your gpa:");
+		gpa = scanner.nextDouble();
+		scanner.nextLine();
+		if(gpa<0.0 || gpa>4.00)
+		{
+			System.out.println("Invalid gpa.");
+		}
+		if(gpa>=3.25 && gpa <= 4.00)
+		{
+			System.out.println("Congratulations, you're eligable for the Dean's list.");
+		}
+		if(gpa<2.0 && gpa >= 0.00)	
+		{
+			System.out.println("Your gpa is causing probationary status.");
+		}
+		if(gpa>=2.5 && gpa <= 4.00)
+		{
+			System.out.println("Gpa is at least at satisfactory level.");
+		}
+		System.out.println("Please enter your hometown now:");
+		homeTown = scanner.nextLine();
+		System.out.println("Youre from, "+ homeTown + ". Welcome! Enjoy your time here.");
+		System.out.println(homeTown.toUpperCase());
+		System.out.println(homeTown.length());
+	}	
+}	
+			
+			
+			
+		
+			
+package asg1;
+
+public class Asg1part2 {
+	public static void main(String[] args)
+	{
+		int sum = 0;
+		for (int i = 1; i < 101;i++)
+		{
+			sum += i;
+		}
+		System.out.println("The sum of the numbers 1-100 is: " + sum);
+		int sum2 = 0;
+		for (int index2 = 1; index2 < 2001; index2++)
+		{
+			if (index2 % 13 == 0)
+			{
+				sum2 += index2;
+			}
+		}
+		System.out.println("The sum of the numbers 1-2000 that are divisable by 13 is: "+ sum2);
+		int sum3 = 0;
+		for (int index3 = 1; index3<51; index3++)
+		{
+			sum3 = sum3 + (index3*index3);
+		}
+		System.out.println("The sum of squares from numbers 1-50 is: "+ sum3);	
+	}
+}
+
+
+
+
+
+package asg1;
+
+import java.util.Scanner;
+
+public class Asg1Part3 {
+	public static boolean isOdd (int number)
+	{
+		boolean isItOdd = false;
+		if(number%2==0)
+		{
+			isItOdd = true;
+		}
+		return isItOdd;
+	}
+	public static String getCategory(double aValue)
+	{
+		String over = "Over";
+		String avg = "Average";
+		String below = "Below";
+		if (aValue > 100)
+		{
+			return over;
+		}
+		else if (aValue <= 100 && aValue >= 25)
+		{
+			return avg;
+		}
+		else
+		{
+			return below;
+		}
+	}
+	public static void main(String[] args)
+	{
+		int number2 = 0;
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter the number you want to test that is even or odd.");
+		number2 = scanner.nextInt();
+		isOdd(number2);
+		if(isOdd(number2) == false)
+		{
+			System.out.println("ODD");
+		}
+		else
+		{
+			System.out.println("EVEN");
+		}
+		System.out.println(getCategory(100.1));
+		System.out.println(getCategory(25.0));
+		System.out.println(getCategory(24.5));
+		System.out.println(getCategory(100.0));
+	
+	}
+}		
+
+			
