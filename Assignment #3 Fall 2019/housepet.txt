@@ -1,0 +1,24 @@
+Zoey the cat princess
+2010
+FEMALE
+CAT
+rugby toughy
+2012
+MALE
+DOG
+sweety tweety
+2002
+MALE
+BIRD
+skippy doo
+2016
+UNKNOWN
+GERBIL
+zippity doo
+2016
+UNKNOWN
+GERBIL
+Miss wonderful
+2013
+FEMALE
+POTBELLY_PIG

@@ -1,0 +1,302 @@
+Enter your name: sabur
+Begin Testing of Asg #3 for Sabur
+
+*********Now testing constructors for HousePet instances
+SUCCESS expected Aa$$$$ for HousePet
+SUCCESS expected Aa$$$$
+SUCCESS expected Shirley Ann Marie
+SUCCESS expected Aa$$$$
+SUCCESS expected 2019 for HousePet
+SUCCESS expected 2019 for HousePet
+SUCCESS expected 2011 for HousePet
+SUCCESS expected 2019 for HousePet
+********Now testing set/get for gender 
+Pet 1: NAME: Aa$$$$ AGE: 0 GENDER: UNKNOWN PET TYPE: UNKNOWN
+Pet 2: NAME: Aa$$$$ AGE: 0 GENDER: UNKNOWN PET TYPE: UNKNOWN
+Pet 3: NAME: Shirley Ann Marie AGE: 8 GENDER: FEMALE PET TYPE: CAT
+Pet 4: NAME: Aa$$$$ AGE: 0 GENDER: MALE PET TYPE: BIRD
+SUCCESS expected MALE
+SUCCESS expected UNKNOWN
+SUCCESS expected UNKNOWN
+SUCCESS expected MALE
+SUCCESS expected FEMALE
+Now testing setter/getter for petName
+SUCCESS expected Queen Anne Margaret
+SUCCESS expected Aa$$$$
+SUCCESS expected Aa$$$$
+SUCCESS expected Aa$$$$
+SUCCESS expected $%^&*kk
+SUCCESS expected $ Abb
+SUCCESS expected Aa$$$$
+SUCCESS expected King George
+SUCCESS expected Shirley Ann Marie
+Now testing setter/getter for yearBorn
+SUCCESS expected 2019 for year born
+SUCCESS expected 2019 for year born
+SUCCESS expected 1900 for year born
+SUCCESS expected 2019 for year born
+SUCCESS expected 2019 for year born
+SUCCESS expected 2008 for year born
+********* Now testing toString() on all 4 pets, each output line should be 
+*********   neat and easy to read with proper spacing.
+Pet 1: NAME: Queen Anne Margaret AGE: 11 GENDER: UNKNOWN PET TYPE: UNKNOWN
+Pet 2: NAME: Aa$$$$ AGE: 0 GENDER: UNKNOWN PET TYPE: UNKNOWN
+Pet 3: NAME: Shirley Ann Marie AGE: 8 GENDER: FEMALE PET TYPE: CAT
+Pet 4: NAME: King George AGE: 0 GENDER: MALE PET TYPE: BIRD
+SUCCESS expected 11 to be part of toString(): NAME: Queen Anne Margaret AGE: 11 GENDER: UNKNOWN PET TYPE: UNKNOWN
+SUCCESS expected Queen Anne Margaret to be part of toString(): NAME: Queen Anne Margaret AGE: 11 GENDER: UNKNOWN PET TYPE: UNKNOWN
+SUCCESS expected 8 to be part of toString(): NAME: Shirley Ann Marie AGE: 8 GENDER: FEMALE PET TYPE: CAT
+SUCCESS expected King George to be part of toString(): NAME: King George AGE: 0 GENDER: MALE PET TYPE: BIRD
+SUCCESS expected 0 to be part of toString(): NAME: King George AGE: 0 GENDER: MALE PET TYPE: BIRD
+********Now testing set/get for gender 
+Pet 1: NAME: Queen Anne Margaret AGE: 11 GENDER: UNKNOWN PET TYPE: UNKNOWN
+Pet 2: NAME: Aa$$$$ AGE: 0 GENDER: UNKNOWN PET TYPE: UNKNOWN
+Pet 3: NAME: Shirley Ann Marie AGE: 8 GENDER: FEMALE PET TYPE: CAT
+Pet 4: NAME: King George AGE: 0 GENDER: MALE PET TYPE: BIRD
+SUCCESS expected MALE
+SUCCESS expected UNKNOWN
+SUCCESS expected UNKNOWN
+SUCCESS expected MALE
+SUCCESS expected FEMALE
+********Now testing set/get for pet type 
+Pet 1: NAME: Queen Anne Margaret AGE: 11 GENDER: MALE PET TYPE: UNKNOWN
+Pet 2: NAME: Aa$$$$ AGE: 0 GENDER: FEMALE PET TYPE: UNKNOWN
+Pet 3: NAME: Shirley Ann Marie AGE: 8 GENDER: FEMALE PET TYPE: CAT
+Pet 4: NAME: King George AGE: 0 GENDER: MALE PET TYPE: BIRD
+SUCCESS expected UNKNOWN
+SUCCESS expected CAT
+SUCCESS expected BIRD
+SUCCESS expected DOG
+SUCCESS expected GERBIL
+********* Now testing toString() on all 4 pets, each output line should be 
+*********   neat and easy to read with proper spacing.
+Pet 1: NAME: Queen Anne Margaret AGE: 11 GENDER: MALE PET TYPE: DOG
+Pet 2: NAME: Aa$$$$ AGE: 0 GENDER: FEMALE PET TYPE: GERBIL
+Pet 3: NAME: Shirley Ann Marie AGE: 8 GENDER: FEMALE PET TYPE: CAT
+Pet 4: NAME: King George AGE: 0 GENDER: MALE PET TYPE: BIRD
+SUCCESS expected 11 to be part of toString(): NAME: Queen Anne Margaret AGE: 11 GENDER: MALE PET TYPE: DOG
+SUCCESS expected MALE to be part of toString(): NAME: Queen Anne Margaret AGE: 11 GENDER: MALE PET TYPE: DOG
+SUCCESS expected DOG to be part of toString(): NAME: Queen Anne Margaret AGE: 11 GENDER: MALE PET TYPE: DOG
+SUCCESS expected Queen Anne Margaret to be part of toString(): NAME: Queen Anne Margaret AGE: 11 GENDER: MALE PET TYPE: DOG
+SUCCESS expected 8 to be part of toString(): NAME: Shirley Ann Marie AGE: 8 GENDER: FEMALE PET TYPE: CAT
+SUCCESS expected FEMALE to be part of toString(): NAME: Shirley Ann Marie AGE: 8 GENDER: FEMALE PET TYPE: CAT
+SUCCESS expected CAT to be part of toString(): NAME: Shirley Ann Marie AGE: 8 GENDER: FEMALE PET TYPE: CAT
+SUCCESS expected BIRD to be part of toString(): NAME: King George AGE: 0 GENDER: MALE PET TYPE: BIRD
+SUCCESS expected King George to be part of toString(): NAME: King George AGE: 0 GENDER: MALE PET TYPE: BIRD
+SUCCESS expected 0 to be part of toString(): NAME: King George AGE: 0 GENDER: MALE PET TYPE: BIRD
+SUCCESS expected Aa$$$$ to be part of toString(): NAME: Aa$$$$ AGE: 0 GENDER: FEMALE PET TYPE: GERBIL
+SUCCESS expected GERBIL to be part of toString(): NAME: Aa$$$$ AGE: 0 GENDER: FEMALE PET TYPE: GERBIL
+SUCCESS expected FEMALE to be part of toString(): NAME: Aa$$$$ AGE: 0 GENDER: FEMALE PET TYPE: GERBIL
+********Now testing that toString() produces no new line chars in returned String for HousePet
+SUCCESS expected 0 new line chars.
+SUCCESS expected 0 new line chars.
+SUCCESS expected 0 new line chars.
+SUCCESS expected 0 new line chars.
+
+End Testing of Asg #3 for Sabur
+
+
+
+
+
+
+
+
+
+
+package asg3;
+
+public class HousePet {
+	public static final String DEFAULT_NAME = "Aa$$$$";
+	public static final int DEFAULT_YEARBORN = 2019;
+	private String petName;
+	private int yearBorn;
+	private PetType petType;
+	private GenderType gender;
+	
+	// default constructor, creates a default HousePet instance
+    // name: DEFAULT_NAME, year born: DEFAULT_YEARBORN, gender: Gender.UNKNOWN, pet type: PetType.UNKNOWN
+	public HousePet()
+	{
+		this.setPetName(DEFAULT_NAME);
+		this.setYearBorn(DEFAULT_YEARBORN);
+		this.setGender(GenderType.UNKNOWN);
+		this.setPetType(PetType.UNKNOWN);
+	}
+	// creates HousePet instance with given data, if any received data is invalid
+    // puts default value into field
+    // valid data:  1900 <= year born <= DEFAULT_YEAR_BORN
+    // pet name:  may not be an empty string nor all whitespace, must have at least 2 letters in it.
+    // any invalid name received, use  DEFAULT_NAME instead     
+	public HousePet(String aName, int aYear, GenderType aGender, PetType aPetType)
+	{
+		this.setPetName(aName);
+		this.setYearBorn(aYear);
+		this.setGender(aGender);
+		this.setPetType(aPetType);
+	}
+	//sets this HousePet's name to aName AFTER calling 
+    //MyUtils.properFormat() method on it remember no empty or all whitespace strings for  pet names allowed
+    //uses default name if received name is invalid
+	public void setPetName(String aName)
+	{
+		int count = 0;
+		String temp = "";
+		temp = utils.MyUtils.properFormat(aName);
+		for (int index = 0; index<temp.length(); index++)
+		{
+			char ch = temp.charAt(index);
+			if(Character.isLetter(ch))
+			{
+				count += 1;
+			}
+		}
+		if(count < 2)
+		{
+			this.petName = DEFAULT_NAME;
+			return;
+		}
+		if (temp.isEmpty() || temp.length() < 2)
+		{
+			this.petName = DEFAULT_NAME;
+		}
+		else
+		{
+			this.petName = temp;
+		}
+	}
+	//sets this HousePet's year born to given value if in proper range or use default year born    
+	public void setYearBorn(int aYearBorn)    
+	{
+		if(aYearBorn < 1900 || aYearBorn > DEFAULT_YEARBORN)
+		{
+			this.yearBorn = DEFAULT_YEARBORN;
+		}
+		else
+		{
+			this.yearBorn = aYearBorn;
+		}
+	}
+	//sets this HousePet's gender to given gender
+	public void setGender(GenderType aGender)
+	{
+		this.gender = aGender;
+	}
+	// sets this HousePet's pet type to given pet type.
+	public void setPetType(PetType aPetType)
+	{
+		this.petType = aPetType;
+	}
+	// returns the name of this HousePet
+	public String getPetName()
+	{
+		return this.petName;
+	}
+	// returns the year born of this HousePet
+	public int getYearBorn() 
+	{
+		return this.yearBorn;
+	}
+	// returns the gender  of this HousePet
+	public GenderType getGender()
+	{
+		return this.gender;
+	}
+	// returns the pet type  of this HousePet
+	public PetType getPetType()
+	{
+		return this.petType;
+	}
+	// returns a nicely formatted String of this HousePet on same line NO NEWLINE
+    // NOTE: age of pet MUST be printed, rather than year born (hint: compute age using this year, 2019)
+	public String toString()
+	{
+		String temp = "";
+		temp += "NAME: "+this.getPetName();
+		temp += " AGE: "+(DEFAULT_YEARBORN - this.getYearBorn());
+		temp += " GENDER: "+ this.getGender();
+		temp += " PET TYPE: "+ this.getPetType();
+		return temp;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+package asg3;
+
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+
+public class HousePetUtilsImpl {
+	//receives: inFile - precondition:  inFile is open and ready to read data from
+	//     file format: pet name {newline} year born {newline} gender {newline} pet type {newline}
+	//returns:  a single populated HousePet instance with data from inFile if all data is there, 
+	//      returns null if no data found (end of input) for a house pet or if 
+	//      any mismatch of data or missing expected data occurs
+	public static HousePet readFromScanner(Scanner inFile)
+	{
+		String petName = "";
+		int yearBorn =0;
+		String petType = "";
+		String genderType = "";
+		if(inFile.hasNext())
+		{
+			petName = inFile.nextLine();
+		}
+		else
+		{
+			return null;
+		}
+		if(inFile.hasNextInt())
+		{
+			yearBorn = inFile.nextInt();
+			inFile.hasNextLine();
+		}
+		else
+		{
+			return null;
+		}
+		if(inFile.hasNext())
+		{
+			genderType = inFile.nextLine();
+		}
+		else
+		{
+			return null;
+		}
+		if(inFile.hasNext())
+		{
+			petType = inFile.nextLine();
+		}
+		else
+		{
+			return null;
+		}
+		
+		PetType newPet = PetType.valueOf(petType);
+		GenderType newGender = GenderType.valueOf(genderType);
+		HousePet pet = new HousePet(petName, yearBorn, newGender, newPet);
+		return pet;
+	}
+	 
+	//receives: outFile - precondition : outFile is open and ready to receive output
+	// returns: nothing
+	// task : received housePet is written to outFile in program readable format (so that it could be read back in later)
+	public static void writeToFile(PrintWriter out, HousePet housePet)
+	{
+		 out.println(housePet.getPetName());
+		 out.println(housePet.getYearBorn());
+		 out.println(housePet.getGender());
+		 out.println(housePet.getPetType());
+		 
+	}
+}
