@@ -1,0 +1,789 @@
+Enter your name: sabur
+Execution BEGINS for Sabur  at: 2019-11-18 21:32:06
+Testing Transaction derived classes...
+error extracting date from: 400, 3, 2019 using default date 1/1/2000
+to String() d5 using 14/63/2019: 
+Deposit: OtQS 1/1/2000 0.00
+to String() of 4 deposits: 
+Deposit: XYYt 1/1/2000 500.00
+Deposit: cD0d 8/12/2019 1000.00
+Deposit: rhn1 9/3/2019 200.00
+Deposit: Gde0 8/14/2019 874.00
+
+toString() of Debit Card: DebitCard: g8o7 1/1/2000 400.00 Diane Flack Furniture
+toString() of Debit Card: DebitCard: g8o7 1/1/2000 400.00 Somewhere Over The Rainbow
+toString() of Debit Card: DebitCard: 4d2f 1/1/2000 100.00 Shell Station
+toString() of Check: Check: RcuC 1/1/2000 0.00 0 The Old Spa At New Braunfels
+toString() of Check: Check: RcuC 1/1/2000 200.00 0 $$$$
+Check c2: Check: lkDp 10/18/2019 40.00 0 Austin Energy Cooperative
+End of Testing Transaction derived classes...
+
+------------------------------------------------------
+
+**** Now testing TransactionUtilsImpl methods ****
+****Output of transactionEmpty.txt:
+****Output of transactionEmptyOut.txt:
+****Output of transaction1.txt:
+Just read: DebitCard: 0ro3 9/4/2019 83.45 Heb
+****Output of transaction1Out.txt:
+Just read: DebitCard: 0ro3 9/4/2019 83.45 Heb
+****Output of transaction3.txt:
+Just read: Check: j89k 9/10/2017 219.76 4105 Austin Energy
+Just read: Deposit: p8rQ 9/1/2017 549.00
+Just read: DebitCard: 0ro3 9/4/2017 83.45 Heb
+****Output of transaction3Out.txt:
+Just read: Check: j89k 9/10/2017 219.76 4105 Austin Energy
+Just read: Deposit: p8rQ 9/1/2017 549.00
+Just read: DebitCard: 0ro3 9/4/2017 83.45 Heb
+****Output of transaction12.txt:
+Just read: Check: j89k 9/10/2019 219.76 4105 Austin Energy
+Just read: Deposit: p8rQ 9/1/2019 549.00
+Just read: DebitCard: 0ro3 9/4/2019 83.45 Heb
+Just read: DebitCard: 2edr 9/12/2019 43.59 Diamond Shamrock Station
+Just read: Check: o3ud 8/20/2019 123.89 4120 Direct Tv Inc.
+Just read: Check: pe94 9/1/2019 55.00 4233 Att Uverse
+Just read: DebitCard: nbei 9/3/2019 9.99 The Card Shop
+Just read: Deposit: cxi3 9/15/2019 512.33
+Just read: Deposit: pe32 9/23/2019 100.00
+Just read: Check: eie8 9/30/2019 12.37 4108 Walgreens Pharmacy Inc.
+Just read: DebitCard: sd34 9/20/2019 14.88 Heb At 306 And I35
+Just read: Check: 43uy 8/25/2019 87.76 4903 Guadalupe Valley Electric Coop
+****Output of transaction12Out.txt:
+Just read: Check: j89k 9/10/2019 219.76 4105 Austin Energy
+Just read: Deposit: p8rQ 9/1/2019 549.00
+Just read: DebitCard: 0ro3 9/4/2019 83.45 Heb
+Just read: DebitCard: 2edr 9/12/2019 43.59 Diamond Shamrock Station
+Just read: Check: o3ud 8/20/2019 123.89 4120 Direct Tv Inc.
+Just read: Check: pe94 9/1/2019 55.00 4233 Att Uverse
+Just read: DebitCard: nbei 9/3/2019 9.99 The Card Shop
+Just read: Deposit: cxi3 9/15/2019 512.33
+Just read: Deposit: pe32 9/23/2019 100.00
+Just read: Check: eie8 9/30/2019 12.37 4108 Walgreens Pharmacy Inc.
+Just read: DebitCard: sd34 9/20/2019 14.88 Heb At 306 And I35
+Just read: Check: 43uy 8/25/2019 87.76 4903 Guadalupe Valley Electric Coop
+**** End of testTransactionUtils() **** 
+
+current list:
+DebitCard: 0ro3 9/4/2019 83.45 Heb
+
+here is list with 1:
+DebitCard: 0ro3 9/4/2019 83.45 Heb
+
+Transaction list of 6 items
+DebitCard: 92gw 10/19/2019 450.00 Rent For October
+Deposit: wc93 9/18/2019 1200.00
+Check: j89k 9/10/2019 219.76 4105 Austin Energy
+DebitCard: 0ro3 9/4/2019 83.45 Heb
+Deposit: p8rQ 9/1/2019 549.00
+Check: 4k3m 12/19/2018 230.45 4187 Mastercard Bank America
+
+Transaction list of 6 items
+DebitCard: 92gw 10/19/2019 450.00 Rent For October
+Deposit: wc93 9/18/2019 1200.00
+Check: j89k 9/10/2019 219.76 4105 Austin Energy
+DebitCard: 0ro3 9/4/2019 83.45 Heb
+Deposit: p8rQ 9/1/2019 549.00
+Check: 4k3m 12/19/2018 230.45 4187 Mastercard Bank America
+
+Transaction list of 12 items
+Check: eie8 9/30/2019 12.37 4108 Walgreens Pharmacy Inc.
+Deposit: pe32 9/23/2019 100.00
+DebitCard: sd34 9/20/2019 14.88 Heb At 306 And I35
+Deposit: cxi3 9/15/2019 512.33
+DebitCard: 2edr 9/12/2019 43.59 Diamond Shamrock Station
+Check: j89k 9/10/2019 219.76 4105 Austin Energy
+DebitCard: 0ro3 9/4/2019 83.45 Heb
+DebitCard: nbei 9/3/2019 9.99 The Card Shop
+Check: pe94 9/1/2019 55.00 4233 Att Uverse
+Deposit: p8rQ 9/1/2019 549.00
+Check: 43uy 8/25/2019 87.76 4903 Guadalupe Valley Electric Coop
+Check: o3ud 8/20/2019 123.89 4120 Direct Tv Inc.
+
+here is list with 12:
+Check: eie8 9/30/2019 12.37 4108 Walgreens Pharmacy Inc.
+Deposit: pe32 9/23/2019 100.00
+DebitCard: sd34 9/20/2019 14.88 Heb At 306 And I35
+Deposit: cxi3 9/15/2019 512.33
+DebitCard: 2edr 9/12/2019 43.59 Diamond Shamrock Station
+Check: j89k 9/10/2019 219.76 4105 Austin Energy
+DebitCard: 0ro3 9/4/2019 83.45 Heb
+DebitCard: nbei 9/3/2019 9.99 The Card Shop
+Check: pe94 9/1/2019 55.00 4233 Att Uverse
+Deposit: p8rQ 9/1/2019 549.00
+Check: 43uy 8/25/2019 87.76 4903 Guadalupe Valley Electric Coop
+Check: o3ud 8/20/2019 123.89 4120 Direct Tv Inc.
+
+list: 
+Check: j89k 9/10/2019 219.76 4105 Austin Energy
+DebitCard: 0ro3 9/4/2019 83.45 Heb
+Deposit: KTnu 9/3/2019 200.00
+
+Dates 9/1/2019:
+Check: pe94 9/1/2019 55.00 4233 Att Uverse
+Deposit: p8rQ 9/1/2019 549.00
+
+SUCCESS opened for reading: transactionEmpty.txt
+Contents of transactionEmpty.txt after reading 
+
+SUCCESS opened file: transactionEmptyOut.txt for reading...
+Contents of previously written file transactionEmptyOut.txt after reading 
+
+SUCCESS opened for reading: transaction1.txt
+Contents of transaction1.txt after reading 
+DebitCard: 0ro3 9/4/2019 83.45 Heb
+
+SUCCESS opened file: transaction1Out.txt for reading...
+Contents of previously written file transaction1Out.txt after reading 
+DebitCard: 0ro3 9/4/2019 83.45 Heb
+
+SUCCESS opened for reading: transaction12.txt
+Contents of transaction12.txt after reading 
+Check: eie8 9/30/2019 12.37 4108 Walgreens Pharmacy Inc.
+Deposit: pe32 9/23/2019 100.00
+DebitCard: sd34 9/20/2019 14.88 Heb At 306 And I35
+Deposit: cxi3 9/15/2019 512.33
+DebitCard: 2edr 9/12/2019 43.59 Diamond Shamrock Station
+Check: j89k 9/10/2019 219.76 4105 Austin Energy
+DebitCard: 0ro3 9/4/2019 83.45 Heb
+DebitCard: nbei 9/3/2019 9.99 The Card Shop
+Check: pe94 9/1/2019 55.00 4233 Att Uverse
+Deposit: p8rQ 9/1/2019 549.00
+Check: 43uy 8/25/2019 87.76 4903 Guadalupe Valley Electric Coop
+Check: o3ud 8/20/2019 123.89 4120 Direct Tv Inc.
+
+SUCCESS opened file: transaction12Out.txt for reading...
+Contents of previously written file transaction12Out.txt after reading 
+Check: eie8 9/30/2019 12.37 4108 Walgreens Pharmacy Inc.
+Deposit: pe32 9/23/2019 100.00
+DebitCard: sd34 9/20/2019 14.88 Heb At 306 And I35
+Deposit: cxi3 9/15/2019 512.33
+DebitCard: 2edr 9/12/2019 43.59 Diamond Shamrock Station
+Check: j89k 9/10/2019 219.76 4105 Austin Energy
+DebitCard: 0ro3 9/4/2019 83.45 Heb
+DebitCard: nbei 9/3/2019 9.99 The Card Shop
+Deposit: p8rQ 9/1/2019 549.00
+Check: pe94 9/1/2019 55.00 4233 Att Uverse
+Check: 43uy 8/25/2019 87.76 4903 Guadalupe Valley Electric Coop
+Check: o3ud 8/20/2019 123.89 4120 Direct Tv Inc.
+
+**** End of testUtilsMethods() **** 
+
+Execution ENDS for Sabur  at: 2019-11-18 21:32:07
+
+
+
+
+
+
+
+
+package transaction;
+
+public class Deposit extends Transaction{
+	public Deposit() // constructs with DEFAULT_ID, DEFAULT_DATE, and 0.00
+	{
+		super();
+	}
+	public Deposit(String aDate, double aAmt) // constructs a deposit with a generated transaction id and received date and amount
+	{
+		super(aDate, aAmt);
+	}
+	public Deposit(String aId, String aDate, double aAmt) // constructs a deposit with received values assuming all are valid
+	{
+		super(aId, aDate, aAmt);
+	}
+	  // toString override
+	public String toString()
+	{
+		String temp = "";
+		temp += "Deposit: ";
+		temp += super.toString();
+		return temp;
+	}
+}
+
+
+
+
+
+
+
+
+
+package transaction;
+
+public class Check extends Transaction {
+	public static final String DEFAULT_RECIPIENT = "$$$$";
+	public static final int MAX_NUMBER = 9999;
+	private int checkNum;
+	private String recipient;
+	public Check() // default constructor
+	{
+		super();
+		this.setRecipient(DEFAULT_RECIPIENT);
+		this.setCheckNumber(0);
+	}
+	public Check(String transactionId, String date, double amount, int checkNum, String recipient)// uses received data if valid
+	{
+		super(transactionId, date, amount);
+		this.setCheckNumber(checkNum);
+		this.setRecipient(recipient);
+	}
+	public Check(String date, double amount, int number, String recip) // generates transaction id uses received data
+	{
+		super(date, amount);
+		this.setCheckNumber(number);
+		this.setRecipient(recip);
+	}
+	public void setCheckNumber(int number) //valid checking number
+	{
+		if(number<0 || number>MAX_NUMBER)
+		{
+			this.checkNum = 0;
+		}
+		else {
+			this.checkNum = number;
+		}
+	}
+	public void setRecipient(String recip) //setting recip
+	{
+		recip = utils.MyUtils.properFormat(recip);
+		if(recip.equals(""))
+		{
+			this.recipient = DEFAULT_RECIPIENT;
+		}
+		else
+		{
+			this.recipient = recip;
+		}
+	}
+	public int getCheckNumber() //getters
+	{
+		return this.checkNum;
+	}
+	public String getRecipient()
+	{
+		return this.recipient;
+	}
+	public String toString() // toString
+	{
+		String temp = "";
+		temp += "Check: ";
+		temp += super.toString() + " " + this.getCheckNumber() +" " + this.getRecipient();
+		return temp;
+	}
+	
+}
+
+
+
+
+
+
+
+package transaction;
+
+public class DebitCard extends Transaction{
+	public static final String DEFAULT_LOCATION = "$$$$";
+	private String placeOfPurchase;
+	public DebitCard() // default constructor
+	{
+		super();
+		this.setPurchaseLocation(DEFAULT_LOCATION);
+	}
+	public DebitCard(String transactionId, String date, double amount, String placeOfPurchase)// uses received data if valid
+	{
+		super(transactionId, date, amount);
+		this.setPurchaseLocation(placeOfPurchase);
+	}
+	public DebitCard(String date, double amount, String theLocation) // generates transaction id uses received data
+	{
+		super(date, amount);
+		this.setPurchaseLocation(theLocation);
+	}
+	public void setPurchaseLocation(String location)
+	{
+		location = utils.MyUtils.properFormat(location);
+		if(location.equals(""))
+		{
+			this.placeOfPurchase = DEFAULT_LOCATION;
+		}
+		else
+		{
+			this.placeOfPurchase = location;
+		}
+	}
+	public String getPurchaseLocation()
+	{
+		return this.placeOfPurchase;
+	}
+	public String toString()
+	{
+		String temp = "";
+		temp += "DebitCard: ";
+		temp += super.toString() + " "+this.getPurchaseLocation();
+		return temp;
+	}
+}
+
+
+
+
+
+
+package transactionlist;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.GregorianCalendar;
+import java.util.Scanner;
+
+import transaction.Transaction;
+import transaction.TransactionUtilsImpl;
+
+
+public class TransactionListLinkedListImpl implements TransactionList {
+	private int count;
+	private Node <Transaction> first;
+	public TransactionListLinkedListImpl() //default constructor
+	{
+		this.count = 0;
+		this.first = null;
+	}
+	public TransactionListLinkedListImpl(String filename) //constructor that takes in filename
+	{
+		Scanner inFile = null;
+		this.count=0;
+		this.first=null;
+		try {
+			inFile = new Scanner(new File(filename));		
+		}
+		catch (IOException e) {
+			System.out.println("Sorry, Cannot Open File, " + filename);
+			return;
+		}
+		while(inFile.hasNext())
+		{
+			Transaction trans = TransactionUtilsImpl.readFromScanner(inFile);
+			if(trans!=null)
+			{
+				this.add(trans);
+			}
+		}
+		inFile.close();
+	}
+	//receives: nothing
+		// returns:  number transactions in the list
+	public String toString()
+	{
+
+		String temp = "";
+		Node <Transaction> current = this.first;
+		while(current!= null)
+		{
+			temp += current.data + "\n";
+			current = current.link;
+		}
+		return temp;
+	}
+	
+	
+	public int getSize()
+	{
+		return this.count;
+	}
+	//receives: nothing
+		// returns: returns a String of all transactions in current list instance that occurred on given date
+		// each transaction is separated by a newline character. Returns an empty string
+		// if no transactions occurred on received date.
+	public String getTransactionListByDate(GregorianCalendar date)
+	{
+		String temp ="";
+		Node<Transaction> current = this.first;
+		while(current!=null)
+		{
+			if(date.equals(current.data.getDateCalendar()))
+			{
+				temp+= current.data + "\n";
+			}
+			current = current.link;
+		}
+		return temp;
+	}
+	//receives: nothing
+		//returns:  true if this TransactionList instance contains received transaction false if not in list.
+		// uses equals method and assumes it is overloaded for Transaction instances
+	public boolean contains(Transaction transaction)
+	{
+		Node <Transaction> current = this.first;
+		while(current!=null)
+		{
+			if(current.data.equals(transaction))
+			{
+				return true;
+			}
+			current = current.link;
+		}
+		return false;
+	}
+	// receives: nothing
+		// returns: adds transaction to list if not full (at MAX_SIZE) and 
+		//       if not in list already 
+		//       returns true if added, false if not
+		//       list remains sorted by date at all times (most recent to least recent date)
+	public boolean add(Transaction transaction)
+	{
+		Node <Transaction> current = this.first;
+		Node <Transaction> previous = null;
+		if(this.getSize() >= MAX_SIZE)
+		{
+			return false;
+		}
+		while(current!= null)
+		{
+			if(current.data.equals(transaction))
+			{
+				return false; // found transaction already in list
+			}
+			if(current.data.getDateCalendar().compareTo(transaction.getDateCalendar())<=0)
+			{
+				break;
+			}
+			previous = current;
+			current = current.link;
+		}
+		Node <Transaction> node = new Node <Transaction> (transaction);
+		if(previous==null) // connected to the front
+		{
+			node.link = this.first;
+			this.first = node;
+		}
+		else
+		{
+			node.link = previous.link;
+			previous.link = node;
+		}
+		this.count ++;
+		return true;
+	}
+	//receives: nothing
+		// returns:  the transaction in the list at given position. 
+		//       uses zero-based positions, so 0 is the position of the first transaction in the list
+		//       returns null if received position is out of range for this transaction list instance.
+		//  Example use:  
+		//        TransactionList tList = new TransactionListImpl("transactions.txt");    
+		// 		  Transaction t1 = list.get(0);
+		//        assertTrue(t1!=null);
+	public Transaction get(int position)
+	{
+		if(position <0 || position > count)
+		{
+			return null;
+		}
+		Node<Transaction> current = this.first;
+		int index = 0;
+		while(current != null)
+		{
+			if (index == position)
+			{
+				return current.data;
+			}
+			current = current.link;
+			index += 1;
+		}
+		return null;
+	}
+	//receives: nothing
+		// returns:  the position of received transaction in the list 
+		//       (uses equals method which is overloaded when matching)
+		//       returns -1 if received transaction is not found in current list at any position
+		//        TransactionList list = new TransactionListImpl("transaction.txt");
+		//        Deposit d2 = new Deposit("aabb","3/15/2017", 100.00).
+		//		  int position = list.find(d2);
+		//	      assertTrue(position != -1);
+	public int find(Transaction transaction)
+	{
+		int position = 0;
+		Node<Transaction> current= this.first;
+		while (current != null)
+		{
+			if(transaction.equals(current.data))
+			{
+				return position;
+			}
+			current = current.link;
+			position ++;
+		}
+		return -1;
+	}
+	// receives: nothing
+	// returns:  transaction  in this list instance that matches given transaction, removes it from list
+	//       list remains sorted by date after removal. (most recent to least recent)
+	//       if transaction is not in the list instance, returns null
+	public Transaction remove(Transaction transaction)
+	{
+		Node<Transaction> previous = null;
+		Node<Transaction> current = this.first;
+		while(current!= null)
+		{
+			if(current.data.equals(transaction))
+			{
+				break; //found it
+			}
+			previous = current;
+			current = current.link;
+			
+		}
+		if(current ==null)
+		{
+			return null;
+		}
+		Transaction retValue = current.data;
+		if(previous==null)
+		{
+			this.first = this.first.link;
+		}
+		else {
+			previous.link = current.link;
+		}
+		this.count --;
+		return retValue;
+	
+	}
+	//receives: nothing
+		// task: all transactions removed from this list instance, 
+	public void clear() 
+	{
+		this.first = null;
+		this.count = 0;
+	}
+	
+	
+	
+	
+	
+	
+	
+	/** Node.java
+	 *implements Node class generically
+	 * used for Linked List classes
+	 * @version 1.1
+	 */
+
+	public class Node <DataType> {
+	  public DataType data;       // the data portion of a Node (public since this is only used by use within a class implementation)
+	  public Node<DataType> link; // the link portion of a Node (public since this is only used by use within a class implementation)
+
+	/** creates an empty Node with both data and link null
+	 */
+	  public Node () {
+	    this.data=null;
+	    this.link = null;
+	  }
+	/** creates a Node with given data value, link is null
+	 *@param theData - the data value to use
+	 */
+	  public Node  (DataType theData) {
+	    this.data = theData;
+	    this.link = null;
+	  }
+	/** creates a Node with given link value, data is null
+	 *@param theLink - the link value to use
+	 */
+	  public Node  (Node<DataType> theLink) {
+	    this.data = null;
+	    this.link = theLink;
+	  }
+
+
+	/** creates a Node with given data and link
+	 *@param  - theData - the data value to place into Node's data
+	 *@param  - theLink - the value to link the Node to (next link)
+	*/
+	  public Node  (DataType theData, Node<DataType> theLink) {
+	    this.data = theData;
+	    this.link = theLink;
+	 }
+	}//end of Node<T> class
+
+
+}
+
+
+
+
+
+
+
+
+package transactionlist;
+
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+import transaction.Transaction;
+import transaction.TransactionUtilsImpl;
+
+public class TransactionListUtilsImpl {
+	// reads from inFile as many transactions as it can, puts each one into transList
+	//receives: inFile -- open and ready to read from
+	//returns :  nothing
+	// task: all transactions found on inFile are added to transList acc'd to rules of add
+	public static void readFromScanner(Scanner inFile, TransactionList transList)
+	{
+		while(inFile.hasNext())
+		{
+			Transaction trans = TransactionUtilsImpl.readFromScanner(inFile);
+			if(trans!= null)
+			{
+				transList.add(trans);
+			}
+		}
+	}
+
+
+	//writes given transList to file in same format as read in with label on each line describing which type of transaction is on the line
+	// receives: outFile-  open and ready to print to
+	// returns:  nothing
+	//  task:  outFile contains entire contents of list written in same format
+//	       as input
+	public static void writeToFile(PrintWriter outFile, TransactionList transList)
+	{
+		for (int i = 0; i < transList.getSize(); i++) {
+			Transaction myTrans = transList.get(i);
+			TransactionUtilsImpl.writeToFile(outFile, myTrans);
+		}
+	}
+}
+
+
+
+
+
+
+
+package transaction;
+
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+public class TransactionUtilsImpl {
+	//tries to read one Transaction derived item from file, if successful, creates Transaction-derived instance, populates it, returns it, assumes data in order described
+	  //receives: inFile -- open and ready to read from
+	  // returns a Transaction derived instance of appropriate type according to what is read
+	public static Transaction readFromScanner(Scanner inFile)
+	{
+		String id = "";
+		String date ="";
+		double amt = 0.0;
+		int checkNum = 0;
+		String recp = "";
+		String place ="";
+		String transType ="";
+		if(inFile.hasNext())
+		{
+			transType = inFile.next();
+		}
+		else
+		{
+			return null;
+		}
+		if(inFile.hasNext())
+		{
+			 id = inFile.next();
+		}
+		else
+		{
+			return null;
+		}
+		if(inFile.hasNext())
+		{
+			date = inFile.next();
+		}
+		else
+		{
+			return null;
+		}
+		if(inFile.hasNextDouble())
+		{
+			amt = inFile.nextDouble();
+		}
+		else
+		{
+			return null;
+		}
+		if(transType.equals("CHECK"))
+		{
+			if(inFile.hasNextInt())
+			{
+				checkNum = inFile.nextInt();
+			}
+			else
+			{
+				return null;
+			}
+			if(inFile.hasNext())
+			{
+				recp = inFile.nextLine().trim();
+			}
+			else
+			{
+				return null;
+			}
+			Check myCheck = new Check(id, date, amt, checkNum, recp);
+			return myCheck;
+		}
+		if(transType.equals("DEPOSIT"))
+		{
+			Deposit myDeposit = new Deposit(id,date,amt);
+			return myDeposit;
+		}
+		else if(transType.equals("DEBIT"))
+		{
+			if(inFile.hasNext())
+			{
+				place = inFile.nextLine().trim();
+			}
+			else
+			{
+				return null;
+			}
+			DebitCard myDebit = new DebitCard(id,date,amt,place);
+			return myDebit;
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+	//writes given trans to file in same format as read in with label on line describing which type of transaction is on the line
+	  // receives: outFile -- ready to print to
+	  //           trans - a Transaction derived type, determining what is written
+	public static void writeToFile(PrintWriter outFile, Transaction trans)
+	{
+		if(trans instanceof Deposit)
+		{
+			outFile.println("DEPOSIT ");
+			Deposit deposit = (Deposit) trans;
+			outFile.print(deposit.getTransactionId()+ " "+ deposit.getDateString() + " " + deposit.getAmount() + "\n");
+		}
+		else if(trans instanceof Check)
+		{
+			outFile.println("CHECK ");
+			Check check = (Check) trans;
+			outFile.print(check.getTransactionId()+ " "+ check.getDateString() + " " + check.getAmount() + " " + check.getCheckNumber() + " " + check.getRecipient() + "\n");
+		}
+		else if(trans instanceof DebitCard)
+		{
+			outFile.println("DEBIT ");
+			DebitCard debit = (DebitCard) trans;
+			outFile.print(debit.getTransactionId()+ " "+ debit.getDateString() + " " + debit.getAmount() + " " + debit.getPurchaseLocation()+ "\n");
+		}
+	}
+}
+
+
+
+
+
