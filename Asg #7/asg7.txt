@@ -1,0 +1,1271 @@
+Enter your name: sabur
+Execution begins  at: 2019-11-24 19:40:02
+SUCCESS, push should throw a RuntimeException on a full stack
+java.lang.RuntimeException: Cannot add, full list.
+*****
+toString() of s1: 
+third
+second
+first
+*****
+SUCCESS, pop throws a RuntimeException on an empty stack
+java.lang.RuntimeException: Cannot remove. Empty list.
+****  Now testing Stack<Integer>****
+SUCCESS, push should throw a RuntimeException on a full stack
+java.lang.RuntimeException: Cannot add, full list.
+SUCCESS, pop throws a RuntimeException on an empty stack
+java.lang.RuntimeException: Cannot remove. Empty list.
+SUCCESS, peek throws a RuntimeException on an empty stack
+java.lang.RuntimeException: Cannot peek. Empty list.
+
+-----  SUCCESS StackTesting PASSES for LinkedListImpl -----
+
+SUCCESS StackLinkedList Testing for Sabur complete.
+Now testing toString() for QueueListImpl
+****
+toString()
+first
+second
+third
+****
+SUCCESS, add throws a RuntimeException on a FULL QUEUE
+java.lang.RuntimeException: Cannot add, full list.
+SUCCESS, getFront() throws a RuntimeException on an EMPTY QUEUE
+java.lang.RuntimeException: Cannot peek. Empty list.
+SUCCESS, getRear() throws a RuntimeException on and EMPTY QUEUE
+java.lang.RuntimeException: Cannot peek. Empty list.
+SUCCESS, remove() throws a RuntimeException on an EMPTY QUEUE
+java.lang.RuntimeException: Cannot remove. Empty list.
+SUCCESS, remove() throws a RuntimeException on an EMPTY QUEUE
+java.lang.RuntimeException: Cannot remove. Empty list.
+****  Now testing QueueList of Integer ****
+SUCCESS, add() throws a RuntimeException on a FULL QUEUE
+java.lang.RuntimeException: Cannot add, full list.
+SUCCESS, remove() throws a RuntimeException on an EMPTY QUEUE
+java.lang.RuntimeException: Cannot remove. Empty list.
+SUCCESS, getRear() throws a RuntimeException on and EMPTY QUEUE
+java.lang.RuntimeException: Cannot peek. Empty list.
+SUCCESS, remove() throws a RuntimeException on an EMPTY QUEUE
+java.lang.RuntimeException: Cannot remove. Empty list.
+SUCCESS, remove() throws a RuntimeException on an EMPTY QUEUE
+java.lang.RuntimeException: Cannot remove. Empty list.
+SUCCESS, getRear() throws a RuntimeException on and EMPTY QUEUE
+java.lang.RuntimeException: Cannot peek. Empty list.
+SUCCESS, remove() throws a RuntimeException on an EMPTY QUEUE
+java.lang.RuntimeException: Cannot remove. Empty list.
+Testing toString()
+SUCCESS QueueTesting for QueueListLinkedListImpl PASSES
+SUCCESS Queue Testing for Sabur complete.
+Execution ends  at: 2019-11-24 19:40:02
+
+
+
+
+
+
+
+package stack;
+
+public class StackListLinkedListImpl<T> implements StackList<T> {
+	
+	private int count;
+	private Node <T> first;
+	private int max_size;
+	
+	public StackListLinkedListImpl() //default constructor 
+	{
+		this.count =0;
+		this.first=null;
+		this.max_size = DEFAULT_MAX_SIZE;
+	}
+	
+	public StackListLinkedListImpl(int maxSize) //2nd default constructor
+	{
+		this.count=0;
+		this.first=null;
+		if(maxSize>=0 && maxSize  <= LARGEST)
+		{
+			this.max_size = maxSize;
+		}
+		else
+		{
+			this.max_size = DEFAULT_MAX_SIZE;
+		}
+	}
+	public String toString()
+	{
+		String temp ="";
+		Node <T> current = this.first;
+		while(current!= null)
+		{
+			temp += current.data + "\n";
+			current = current.link;
+		}
+		return temp;
+	}
+	 /**receives: nothing
+     *  task:  tests to see if the Stack has 0 elements
+     *  returns: true if this StackList is empty (has 0 elements) false otherwise;
+     */
+	public boolean isEmpty()
+	{
+		if(this.first==null)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	/** receives: nothing
+	 * returns: number of elements on this StackList (always <= to getMaxSize())
+	 */
+	  public int getSize()
+	  {
+		  return this.count;
+	  }
+	/**receives: nothing
+	   *  task:  tests to see if this StackList instance has getMaxSize() elements 
+	   *  returns: true if this StackList is full (has getMaxSize() elements) false otherwise;
+	*/
+	  public boolean isFull()
+	  {
+		  if(this.count == getMaxSize())
+		  {
+			  return true;
+		  }
+		  else
+		  {
+			  return false;
+		  }
+	  }
+	  
+	  /** receives: nothing
+	   * returns: max number of elements allowed on this StackList (always <= to getMaxSize())
+	   */
+	   public int getMaxSize()
+	   {
+		   return this.max_size;
+	   }
+
+	   /** receives: element to place on top of this StackList
+	    * task: received element is on top of this StackList instance if it is not full
+	    * returns: nothing
+	    *@throws RuntimeException if this StackList is full (has max size elements already)
+	    */
+	   public void push(T element)
+	   {
+		   if(this.isFull())
+		   {
+			   throw new RuntimeException("Cannot add, full list.");
+		   }
+		   Node <T> node = new Node<T>(element);
+		   node.link = this.first;
+		   this.first= node;
+		   this.count++;
+	   }
+	
+	   /** receives: nothing
+	   returns:  removes AND returns the top item from this StackList if  it is NOT empty. 
+	 * @throws - RuntimeException if attempt to pop an empty StackList
+	 */
+	   public T pop()
+	   {
+		   if(this.isEmpty())
+		   {
+			   throw new RuntimeException("Cannot remove. Empty list.");
+		   }
+		   Node<T> current = this.first;
+		   first = first.link;
+		   this.count--;
+		   return current.data;
+	   }
+	   
+	   /** receives: nothing
+	    *returns the top item from this StackList  if it is
+	   *         not empty.  DOES NOT POP IT.
+	   * @throws - RuntimeException if attempt to peek at an empty StackList instance
+	   */
+	   public T peek()
+	   {
+		   if(this.isEmpty())
+		   {
+			   throw new RuntimeException("Cannot peek. Empty list.");
+		   }
+		   Node<T> current = this.first;
+		   return current.data;
+	   }
+	   /**receives: nothing
+	    returns: nothing
+	    task:  removes all items from this StackList, making it empty.
+	 */
+	   public void clear()
+	   {
+		   this.first=null;
+		   this.count=0;
+	   }
+	   
+	   
+	   
+	   
+	   
+	/** a typical node class for a linked list
+	 * single traditional linked list node
+	 * templated to hold any object-based type
+	 * @author LJBaker
+	 *
+	 * @param <T> the object based type stored in the node
+	 * all data is public as this is used internally by a linked list
+	 * never used in any public sense
+	 */
+
+	private class Node<T>
+	{
+
+	    public T data; 
+	    public Node<T> link;
+
+	    //default constructor 
+	    public Node()
+		{
+		    this.data = null;
+		    this.link = null;
+		}//end of constructor
+
+	    public Node(T theData)
+		{
+		    this.data = theData;
+		    this.link = null;
+		}
+
+	    public Node(Node<T> theLink)
+		{
+		    this.data = null;
+		    this.link = theLink;
+		}
+
+	    public Node(T theData, Node<T> theLink)
+		{
+		    this.data = theData;
+		    this.link = theLink;
+		}
+
+	}//End of Node<T> public class. 
+}
+
+
+
+
+
+package queue;
+
+
+public class QueueListLinkedListImpl<T> implements QueueList<T> {
+	private int count;
+	private Node <T> first;
+	private Node <T> last;
+	private int max_size;
+	
+	public QueueListLinkedListImpl() //default constructor
+	{
+		this.count =0;
+		this.first=null;
+		this.last = null;
+		this.max_size = DEFAULT_MAX_SIZE;
+	}
+	public QueueListLinkedListImpl(int maxSize) // second constructor to test max size
+	{
+		if(maxSize>=0 && maxSize  <= LARGEST)
+		{
+			this.max_size = maxSize;
+		}
+		else
+		{
+			this.max_size = DEFAULT_MAX_SIZE;
+		}
+	}
+	public String toString()
+	{
+		String temp ="";
+		Node <T> current = this.first;
+		while(current!= null)
+		{
+			temp += current.data.toString() + "\n";
+			current = current.link;
+		}
+		return temp;
+	}
+	
+	/** receives: nothing
+	 *  task:  tests to see if this QueueList has 0 elements
+	 *  returns: true if this QueueList is empty (has 0 elements) false otherwise;
+	 */
+	 public boolean isEmpty()
+	 {
+		if(this.count==0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	 }
+	 /**receives: nothing
+	  *  task:  tests to see if this StackList instance has getMaxSize() elements 
+	  *  returns: true if this StackList is full (has getMaxSize() elements) false otherwise;
+	*/
+	public boolean isFull() 
+	{
+		if (this.count == getMaxSize()) 
+		{
+			return true;
+		} 
+		else 
+		{
+			return false;
+		}
+	}
+	/** receives: nothing
+	 * returns: number of elements on this StackList (always <= to getMaxSize())
+	 */
+	public int getSize()
+	{
+		return this.count;
+	}
+	 /** receives: nothing
+	 * returns:  max allowable number of elements in this QueueList
+	 */
+	public int getMaxSize()
+	{
+		return this.max_size;
+	}
+	/** places item at the REAR of this QueueList
+	 *receives: nothing
+	 * returns: nothing
+	 * task:  element is placed at the REAR or END of this QueueList if it is NOT full
+	 *throws: RuntimeException if this QueueList is full
+	 */
+	public void add(T element)
+	{
+		if(this.isFull())
+		{
+			throw new RuntimeException("Cannot add, full list.");
+		}
+		Node<T> node = new Node<T>(element);
+		if(this.isEmpty())
+		{
+			this.first=node;
+			this.last=node;
+			this.count++;
+		}
+		else
+		{
+			last.link = node;
+			this.last= node;
+			this.count++;
+		}
+	}
+	/** receives: nothing
+	   returns:  removes and returns the FRONT item from this QueueList if it is NOT empty
+	 * @throws - RuntimeException if attempt to remove from an empty QueueList
+	
+	 */
+	public T remove()
+	{
+		if(this.isEmpty())
+		{
+			throw new RuntimeException("Cannot remove. Empty list.");
+		}
+		Node<T> current = this.first;
+		first = first.link;
+		count--;
+		return current.data;
+	}
+	/** receives: nothing
+	 * returns: the FRONT item from this QueueList if it is
+	 * not empty.  DOES NOT REMOVE IT.
+	 * @throws - RuntimeException if this QueueList is empty.
+	 */
+	 public T getFront()
+	 {
+		 if(this.isEmpty())
+		 {
+			 throw new RuntimeException("Cannot peek. Empty list.");
+		 }
+		 Node<T> current = this.first;
+		 return current.data;
+	 }
+	 /** receives: nothing
+		 * returns: the REAR (or last)  item from this QueueList if it is
+		 *      not empty.  DOES NOT REMOVE IT.
+		 * @throws - RuntimeException if this QueueList is empty.
+		 */
+	 public T getRear()
+	 {
+		 if(this.isEmpty())
+		 {
+			 throw new RuntimeException("Cannot peek. Empty list.");
+		 }
+		 Node<T> current = this.last;
+		 return current.data; 
+	 }
+	 /** receives: nothing
+	    task: removes all items from this QueueList making it empty.
+	    returns: nothing
+	 */
+	 public void clear()
+	 {
+		 this.first=null;
+		 this.count=0;
+	 }
+	
+	private class Node<T>
+	{
+
+	    public T data; 
+	    public Node<T> link;
+
+	    //default constructor 
+	    public Node()
+		{
+		    this.data = null;
+		    this.link = null;
+		}//end of constructor
+
+	    public Node(T theData)
+		{
+		    this.data = theData;
+		    this.link = null;
+		}
+
+	    public Node(Node<T> theLink)
+		{
+		    this.data = null;
+		    this.link = theLink;
+		}
+
+	    public Node(T theData, Node<T> theLink)
+		{
+		    this.data = theData;
+		    this.link = theLink;
+		}
+
+	}//End of Node<T> public class. 
+}
+
+
+
+
+
+
+package asg7;
+// main program that runs the Stack and Queue Gui testing
+// uses the Model-View-Controller paradigm
+// the controller is StackQueueViewImpl 
+// the models are StackEngine and QueueEngine instances
+// the view is part of the controller in StackQueueViewImpl class
+
+import java.awt.FlowLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+import javax.swing.JFrame;
+
+
+
+public class StackQueueFrame {
+
+	public static final int FRAME_WIDTH=800;
+	public static final int FRAME_HEIGHT=600;
+	public static void main(String[]args)
+	{
+	StackEngine stackEngine = new StackEngineImpl(4);
+	QueueEngine queueEngine = new QueueEngineImpl(4);
+	StackQueueController controller = new StackQueueController(stackEngine,queueEngine);
+	JFrame frame = new JFrame("Stack and Queue Gui Example -- Sabur Khan");
+	frame.setLayout(new FlowLayout());
+	frame.addWindowListener( new WindowAdapter() {
+		public void windowClosing(WindowEvent windowEvent)
+		{
+			System.exit(0);
+		}
+	});
+	frame.getContentPane().add(controller);
+	frame.setSize(StackQueueFrame.FRAME_WIDTH,StackQueueFrame.FRAME_HEIGHT);
+	frame.setVisible(true);
+   }
+
+}
+
+
+
+
+
+
+
+package asg7;
+/** engine implementation that models the use of two different stack implementations
+ *   provides a minimal set of methods
+ *  that models/uses two stacks and allows a few operations on those stacks
+ *  @author: LJBaker
+ */
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.EventListenerList;
+
+import stack.StackList;
+import stack.StackListLinkedListImpl;
+
+public class StackEngineImpl implements StackEngine {
+	private StackList<String> stack; // one of 2 stacks used in this engine
+
+	private EventListenerList eventListenerList;  // stores one or more event listener
+	private final ChangeEvent CHANGE_EVENT = new ChangeEvent(this);
+	private String actionText;
+
+	// default constructor, builds the stack with default max size of 4
+	public StackEngineImpl()
+	{
+		stack = new StackListLinkedListImpl<String>(StackEngine.DEFAULT_MAX_SIZE);
+		this.eventListenerList = new EventListenerList();
+		this.actionText="Stack is EMPTY";
+	}
+	public StackEngineImpl(int aMax)
+	{
+		if(aMax>=0 && aMax <=StackList.LARGEST)
+		{
+			stack = new StackListLinkedListImpl<String>(aMax);
+		}
+		else
+		{
+			stack = new StackListLinkedListImpl<String>(StackEngine.DEFAULT_MAX_SIZE);
+		}
+		this.eventListenerList = new EventListenerList();
+		this.actionText="Stack is EMPTY";
+	}
+	//the expected method for any class, returns a string of
+	// the current stack contents 
+	public String toString()
+	{
+		String temp = "";
+		temp = stack.toString();
+
+		return temp;
+	}
+
+	public String getActionText()
+	{
+		return this.actionText;
+	}
+
+	//pre: stack being pushed is not full
+	// post: stack has contents of element on the top
+	//       actionText contains information about results.
+	public void push(String element) {
+		if(stack.getSize() >= stack.getMaxSize())
+		{
+			actionText = "NO PUSH FULL Stack";
+		}
+		else
+		{
+			stack.push(element);
+			actionText = "PUSHED: " + element;
+		}
+
+		this.fireChangeEvent(CHANGE_EVENT);
+	}
+	//pre: stack is not empty
+	// post: sets actionText to describe top element on current stack
+	//       actionText contains information about value peeked at.
+	public  void peek() 
+	{
+		if(stack.isEmpty())
+		{
+			actionText = "Cannot Peek -- EMPTY STACK";
+		}
+		else 
+		{
+			String res = this.stack.peek();
+			actionText = "PEEKED: " + res;
+		}
+		this.fireChangeEvent(CHANGE_EVENT);
+
+
+	}
+	//pre: stack is not empty
+	// post: returns AND REMOVES top element on current stack
+	//       actionText contains information about results.
+	public void pop() {
+		if(stack.isEmpty())
+		{
+			actionText = "Cannot POP -- EMPTY STACK";
+		}
+		else 
+		{
+			String res = this.stack.pop();
+			actionText = "POPPED: " + res;
+		}
+		this.fireChangeEvent(CHANGE_EVENT);
+	}
+	//pre: none
+	// post: number of elements on stack is returned
+	public int getSize() {
+
+		return this.stack.getSize();
+	}
+	//pre: none
+	// post: returns max size for current stack 
+	public int getMaxSize()
+	{
+		return this.stack.getMaxSize();
+	}
+	public void showMaxSize()
+	{
+		actionText= "Stack Max Size: " + StackEngine.DEFAULT_MAX_SIZE;
+		this.fireChangeEvent(CHANGE_EVENT);
+
+	}
+	//pre: none
+	// post: returns true iff the current stack has a size of 0.
+	public void testEmpty() 
+	{
+		if(stack.isEmpty())
+		{
+			actionText = "Stack Is Empty.";
+		}
+		else
+		{
+			actionText = "Stack Is Not Empty.";
+		}
+		this.fireChangeEvent(CHANGE_EVENT);		
+
+	}
+	//pre: none
+	// post: returns true if the stack currently has MAX_ELEMENTS on it.
+	public void testFull() 
+	{
+		if(stack.isFull())
+		{
+			actionText = "Stack Is Full.";
+		}
+		else
+		{
+			actionText = "Stack Is Not Full.";
+		}
+
+		this.fireChangeEvent(CHANGE_EVENT);			
+	}
+	// pre: none
+	// post: current stack is empty, size is 0.
+	public void clear()
+	{  
+		this.stack.clear();
+		actionText = "CLEARD STACK: ";
+		
+		this.fireChangeEvent(CHANGE_EVENT);
+		//fill in code
+	}
+	//standard boilerplate method for change events
+	public void addChangeListener(ChangeListener changeListener)
+	{
+		eventListenerList.add(ChangeListener.class, changeListener);
+	}
+	//standard boilerplate method for change events
+	public void removeChangeListener(ChangeListener changeListener)
+	{
+		eventListenerList.remove(ChangeListener.class, changeListener);
+	}
+	//standard boilerplate method for change events
+	// used when we need to notify the view that a change to the model has taken place
+	// so that the view can update itself.
+	public void fireChangeEvent(ChangeEvent changeEvent) {
+		// Guaranteed to return a non-null array
+		Object[] listeners = eventListenerList.getListenerList();
+		// Process the listeners last to first, notifying
+		// those that are interested in this event
+		for (int i = listeners.length-2; i>=0; i-=2) {
+			if (listeners[i]==ChangeListener.class) {
+				((ChangeListener)listeners[i+1]).stateChanged(changeEvent);
+			}
+		}
+	}
+
+}
+
+
+
+
+
+
+package asg7;
+
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.EventListenerList;
+
+import queue.QueueListLinkedListImpl;
+import queue.QueueList;
+
+public class QueueEngineImpl implements QueueEngine 
+{
+
+	private QueueList <String> queue;
+	private String actionText;
+	private EventListenerList eventListenerList;
+	private final ChangeEvent CHANGE_EVENT = new ChangeEvent(this);
+
+	//default constructor that sets the maxSize of the model queue to DEFAULT_MAX_SIZE from interface
+	public QueueEngineImpl()
+	{
+		this.queue = new QueueListLinkedListImpl<String>(QueueEngine.DEFAULT_MAX_SIZE);
+		this.eventListenerList = new EventListenerList();  // create the listener list so we can add listeners to the model
+		this.actionText = "Queue is EMPTY";
+	}
+	// constructor that receives a maxSize for the queue model
+	public QueueEngineImpl(int maxSize)
+	{
+		this.queue = new QueueListLinkedListImpl<String>(maxSize);
+
+		this.eventListenerList = new EventListenerList();  // create the listener list so we can add listeners to the model
+		this.actionText = "Queue is EMPTY";
+	}
+
+	//as expected, override of toString() so that we can see the current engine's status
+	public String toString()
+	{
+		return this.queue.toString();
+	}
+
+	//pre: none
+	// post: current queue has 1 or more element on it if it is not full
+	//       if current stack is full, no changes made, sets actionText appropriately
+	public void add(String element)
+	{
+		if(queue.isFull())
+		{
+			this.actionText = "Queue is Full NO room to ADD";
+
+		}
+		else
+		{
+			this.actionText = "ADDED: " + element;
+			this.queue.add(element);
+		}
+		this.fireChangeEvent(CHANGE_EVENT);
+
+	}
+	@Override
+	public void remove() 
+	{
+		if(queue.isEmpty())
+			actionText = "EMPTY Queue  NO REMOVE";
+		else
+		{
+			String result = queue.remove();
+			actionText = "REMOVE: " + result;
+		}
+		this.fireChangeEvent(CHANGE_EVENT);
+	}
+
+	// pre: none
+	// post:  current Queue is popped and value returned, if stack is empty no pop occurs and actionText states that
+	//        otherwise actionText contains result of pop and current stack contents
+	public void  showFront()
+	{
+		if(this.queue.isEmpty())
+		{
+			this.actionText = "EMPTY Queue NO FRONT";
+		}
+		else
+		{
+			String front = this.queue.getFront();
+			this.actionText = "FRONT: " + front;
+		}
+		this.fireChangeEvent(CHANGE_EVENT);
+	}
+
+
+	public int getSize()
+	{
+		return this.queue.getSize();
+	}
+	//pre: none
+	// post: returns max size for current stack 
+	public void showSize()
+	{
+		int result = queue.getSize();
+		actionText = "QUEUE SIZE: " + result;
+		this.fireChangeEvent(CHANGE_EVENT);
+	}
+	//pre: none
+	// post: returns max size for current stack 
+	public void showMaxSize()
+	{
+		actionText= "Queue Max Size: " + QueueEngine.DEFAULT_MAX_SIZE;
+		this.fireChangeEvent(CHANGE_EVENT);
+	}
+	public int getMaxSize()
+	{
+		return this.queue.getMaxSize();
+	}
+
+	// pre: none
+	// post:  front (or first) item in Queue returned, if queue is empty actionText states that
+	//        otherwise actionText contains result of peek and current stack contents
+	public void showRear() 
+	{
+		if(this.queue.isEmpty())
+		{
+			this.actionText = "EMPTY Queue NO REAR";
+		}
+		else
+		{
+			String rear = this.queue.getRear();
+			this.actionText = "REAR: " + rear;
+		}
+		this.fireChangeEvent(CHANGE_EVENT);
+	}
+	//pre:  none
+	//post: returns true if the current stack is empty false if its not.
+	public void testEmpty()
+	{
+		if(queue.isEmpty())
+		{
+			actionText = "Queue Is Empty.";
+		}
+		else
+		{
+			actionText = "Queue Is Not Empty.";
+		}
+		this.fireChangeEvent(CHANGE_EVENT);
+	}
+	//pre:  none
+	//post: returns true if the current stack is full false if its not.
+	public void testFull()
+	{
+		if(queue.isFull())
+		{
+			actionText = "Queue Is Full.";
+		}
+		else
+		{
+			actionText = "Queue Is Not Full.";
+		}
+		this.fireChangeEvent(CHANGE_EVENT);
+	}
+	// pre: none
+	// post: current stack is empty
+	public void clear()
+	{
+		this.queue.clear();
+		actionText = "CLEARD QUEUE: ";
+		this.fireChangeEvent(CHANGE_EVENT);
+	}
+	public String getActionText()
+	{
+		return this.actionText;
+	}
+	//standard boilerplate method for change events
+	public void addChangeListener(ChangeListener changeListener)
+	{
+		eventListenerList.add(ChangeListener.class, changeListener);
+	}
+	//standard boilerplate method for change events
+	public void removeChangeListener(ChangeListener changeListener)
+	{
+		eventListenerList.remove(ChangeListener.class, changeListener);
+	}
+	//standard boilerplate method for change events
+	// used when we need to notify the view that a change to the model has taken place
+	// so that the view can update itself.
+	public void fireChangeEvent(ChangeEvent changeEvent) {
+		// Guaranteed to return a non-null array
+		Object[] listeners = eventListenerList.getListenerList();
+		// Process the listeners last to first, notifying
+		// those that are interested in this event
+		for (int i = listeners.length-2; i>=0; i-=2) 
+		{
+			if (listeners[i]==ChangeListener.class) 
+			{
+				((ChangeListener)listeners[i+1]).stateChanged(changeEvent);
+			}
+		}
+
+	}
+
+}
+
+
+
+
+
+
+
+
+package asg7;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.util.Scanner;
+
+import javax.swing.JPanel;
+
+public class StackViewImpl extends JPanel
+	{
+		/**
+		 This class is used as part of the "view" and it displays
+		 * (paints) a given stackEngine 
+		 *  the stackEngine is sent to the constructor - it always
+		 *  paints that stackEngine instance.
+		 *  assumes a getSize() and getMaxSize() are available
+		 *  from the stackEngine instance
+		 */
+		private static final long serialVersionUID = 1L;
+		final int MYWIDTH=StackQueueFrame.FRAME_WIDTH/2;
+		final int MYHEIGHT=StackQueueFrame.FRAME_HEIGHT-200;
+		StackEngine engine;
+		public StackViewImpl(StackEngine sEngine)
+		{ 
+			super();
+			this.setBackground(Color.PINK);
+			this.setPreferredSize(new Dimension(MYWIDTH, MYHEIGHT));
+			engine = sEngine;
+			this.repaint();
+		}
+		public void paintComponent(Graphics g)
+		{
+			super.paintComponent(g);
+			String theStack = engine.toString();
+			Scanner input = new Scanner(theStack);
+			g.setFont(new Font("default", Font.BOLD, 16));
+			int size = engine.getSize();
+			
+			int ht = MYHEIGHT/(engine.getMaxSize()+1);
+			int height= 20;
+			int width = 10;
+			// draw the stack element container as rectangles
+			for(int i=0; i<engine.getMaxSize(); i++)
+			{   
+				g.drawRect(20, height-10,MYWIDTH-50,ht );
+				
+				height += ht;
+			}
+			// now draw the values in the stack in the contains from top to bottom
+			height= (engine.getMaxSize()-size)*ht+25;
+			for(int i=0; i<size; i++)
+			{  
+				String out = input.nextLine();
+				g.drawString(out, width+15,  height);
+				height += ht;
+			}
+			input.close();
+			g.drawString(engine.getActionText(), 20, height);
+		}
+	}
+
+
+
+
+
+
+package asg7;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.util.Scanner;
+
+import javax.swing.JPanel;
+
+public class QueueViewImpl extends JPanel{
+	
+		/**This class is used as part of the "view" and it displays
+		 * (paints) a given queueEngine 
+		 *  the queueEngine is sent to the constructor - it always
+		 *  paints that queueEngine instance.
+		 *  assumes a getSize() and getMaxSize() are available
+		 *  from the queueEngine instance
+		 */
+		private static final long serialVersionUID = 1L;
+		final int MYWIDTH=StackQueueFrame.FRAME_WIDTH/2;
+		//final int QWIDTH = StackQueueFrame.FRAME_WIDTH/4;
+		final int MYHEIGHT=StackQueueFrame.FRAME_HEIGHT-200;
+		private QueueEngine engine;
+
+		public QueueViewImpl(QueueEngine qEngine)
+		{ 
+			super();
+			this.setBackground(Color.YELLOW);
+			this.setPreferredSize(new Dimension(MYWIDTH, MYHEIGHT));
+			this.engine = qEngine;
+			this.repaint();
+		}
+		public void paintComponent(Graphics g)
+		{
+			super.paintComponent(g);
+			String theQueue = engine.toString();
+			Scanner input = new Scanner(theQueue);
+			g.setFont(new Font("default", Font.BOLD, 16));
+			int size = engine.getSize();
+			
+			
+			int ht = MYHEIGHT/(engine.getMaxSize() + 1);
+			int height= 20;
+			int width = 10;
+			// draw the stack element container as rectangles
+			for(int i=0; i<engine.getMaxSize(); i++)
+			{   
+				g.drawRect(20, height-10,MYWIDTH - 50,ht );
+				
+				height += ht;
+			}
+			// now draw the values in the stack in the contains from top to bottom
+			height= (engine.getMaxSize()-size)*ht+25;
+			for(int i=0; i<size; i++)
+			{  
+				String out = input.nextLine();
+				g.drawString(out, width+15,  height);
+				height += ht;
+			}
+			input.close();
+			g.drawString(engine.getActionText(), width, height);
+			g.drawString("[Instructor's Copy]", width+80, height+30);
+			}
+		
+
+	}//end of QueueViewImpl class
+
+
+
+
+
+
+
+package asg7;
+/**  implementation of the view of two different stack implementations
+ *   modeled with a stack engine
+ *  that models/uses two stacks and allows a few operations on those stacks
+ *  @author: LJBaker
+ */
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
+public class StackQueueController extends JPanel implements ActionListener {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	JButton pushButton;
+	JButton popButton;
+	JButton frontButton;
+	JButton addButton;
+	JButton removeButton;
+	JButton fullButton;
+	JButton emptyButton;
+	JButton peekButton;
+	JButton clearButton;
+	JButton showSizeButton;
+	JButton maxButton;
+	JButton rearButton;
+	JButton clearQueueButton;
+
+	JPanel stackButtonPanel ;
+	JPanel queueButtonPanel;
+	StackViewImpl stackPanel;
+	QueueViewImpl queuePanel;
+	StackEngine stackEngine;
+	QueueEngine queueEngine;
+
+	ChangeListener stackEngineListener;
+	ChangeListener queueEngineListener;
+
+	// default constructor, receives the stack engine model it is displaying and controlling
+	public StackQueueController(StackEngine aStackEngine, QueueEngine aQueueEngine)
+	{
+		super();
+		this.setPreferredSize(new Dimension(StackQueueFrame.FRAME_WIDTH-20, StackQueueFrame.FRAME_HEIGHT - 100));
+		this.setLayout(new BorderLayout());
+		this.stackEngine = aStackEngine;
+		this.queueEngine = aQueueEngine;
+		//create a "listener" for the stack engine, so if that engine changes, it can respond
+		stackEngineListener = new ChangeListener()
+		{ 
+			public void stateChanged(ChangeEvent e){
+				update();
+			}
+
+		};
+		this.stackEngine.addChangeListener(stackEngineListener); // add listener to stackEngine for notification
+		queueEngineListener = new ChangeListener()
+		{ 
+			public void stateChanged(ChangeEvent e){
+				update();
+			}
+
+		};
+		//create a "listener" for the queue engine, so if that engine changes, we can respond
+		this.queueEngine.addChangeListener(queueEngineListener);
+		init();
+	}
+	// initializes the view - all the widgets and listeners, sets up the view
+	private void init() 
+	{
+		this.pushButton = new JButton("Push");
+		this.popButton = new JButton("Pop");
+		this.frontButton = new JButton("Get Front");
+		this.addButton = new JButton("Add to Queue");
+		this.removeButton = new JButton("Remove from Queue");
+		this.peekButton= new JButton("Peek");
+		this.clearButton = new JButton("Clear Stack");
+		this.showSizeButton = new JButton("Get Queue Size");
+		this.maxButton = new JButton("Get Max Size(both)");
+		this.rearButton = new JButton("Get Rear");
+		this.clearQueueButton = new JButton("Clear Queue");
+		
+		this.emptyButton = new JButton("Check Empty(both)");
+		this.fullButton = new JButton("Check Full(both)");
+		this.stackPanel = new StackViewImpl(stackEngine);  // create a Stack Panel (view) and send it the engine it is "modeling"
+		this.queuePanel = new QueueViewImpl(queueEngine);  // create a Queue Panel (view) and send it the engine it is "modeling"
+
+		stackButtonPanel = new JPanel();		  // used to hold all stack operation buttons
+		stackButtonPanel.setLayout(new GridLayout(2,4));  // 1 row of 6 (change as more or less buttons are used)
+		stackButtonPanel.add(pushButton);			// now add buttons to the panel
+		stackButtonPanel.add(popButton);
+		stackButtonPanel.add(fullButton);
+		stackButtonPanel.add(emptyButton);
+		stackButtonPanel.add(peekButton);
+		stackButtonPanel.add(clearButton);
+		stackButtonPanel.add(maxButton);
+		
+		
+		queueButtonPanel = new JPanel();			// used to hold all queue operation buttons - currently 3 but more should be added
+		queueButtonPanel.setLayout(new GridLayout(2,4));
+		queueButtonPanel.add(addButton);
+		queueButtonPanel.add(removeButton);
+		queueButtonPanel.add(frontButton);
+		queueButtonPanel.add(showSizeButton);
+		queueButtonPanel.add(rearButton);
+		queueButtonPanel.add(clearQueueButton);
+
+
+		this.add(stackButtonPanel, BorderLayout.NORTH);  // this is the controller panel, add the stack button panel to the top across
+		this.add(queuePanel,  BorderLayout.EAST);		  // add remaining components to this controller panel
+		this.add(stackPanel, BorderLayout.WEST);
+		this.add(queueButtonPanel,  BorderLayout.SOUTH);  // add queue button panel to the bottom
+
+		pushButton.addActionListener(this); 
+		popButton.addActionListener(this);
+		frontButton.addActionListener(this);
+		addButton.addActionListener(this);
+		removeButton.addActionListener(this);
+		fullButton.addActionListener(this);
+		emptyButton.addActionListener(this);
+		peekButton.addActionListener(this);
+		clearButton.addActionListener(this);
+		showSizeButton.addActionListener(this);
+		maxButton.addActionListener(this);
+		rearButton.addActionListener(this);
+		clearQueueButton.addActionListener(this);
+		
+	}
+	//method called when an ChangeEvent is fired in the model
+	// updates data on the view which will reflect any changes made to the model
+	private void update() 
+	{
+		// repaint all models (engines)
+		repaint();
+	}
+
+	// HANDLES all button actions, listeners for each button
+	public void actionPerformed(ActionEvent e) {
+
+		if(e.getSource().equals(pushButton))
+		{  
+			String item = JOptionPane.showInputDialog(this, "Enter value to push", "");
+			if(item != null&& item.length() != 0)
+				stackEngine.push(item);
+		}
+		else if (e.getSource().equals(popButton))
+		{
+			stackEngine.pop();  // note we popped the engine and it recovers the value popped	
+		}
+
+		else if (e.getSource().equals(addButton))
+		{
+			String item = JOptionPane.showInputDialog(this, "Enter value to add to queue:", "");
+			if(item != null && item.length() != 0)
+			     queueEngine.add(item);
+		}
+		else if (e.getSource().equals(removeButton))
+		{
+			queueEngine.remove();  // note we remove
+		}
+		else if (e.getSource().equals(frontButton))
+		{
+			queueEngine.showFront();
+		}
+		else if (e.getSource().equals(fullButton))
+		{
+			queueEngine.testFull();  
+			stackEngine.testFull();
+		}
+		else if(e.getSource().equals(emptyButton))
+		{
+			queueEngine.testEmpty();
+			stackEngine.testEmpty();
+		}
+		else if(e.getSource().equals(peekButton))
+		{
+			stackEngine.peek();
+		}
+		else if(e.getSource().equals(clearButton))
+		{
+			stackEngine.clear();
+		}
+		else if(e.getSource().equals(showSizeButton))
+		{
+			queueEngine.showSize();
+		}
+		else if(e.getSource().equals(maxButton))
+		{
+			queueEngine.showMaxSize();
+			stackEngine.showMaxSize();
+		}
+		else if(e.getSource().equals(rearButton))
+		{
+			queueEngine.showRear();
+		}
+		else if(e.getSource().equals(clearQueueButton))
+		{
+			queueEngine.clear();
+		}
+		
+
+		//stackArea.setText(actionText);
+	}
+
+} // end of StackQueueViewImpl class
+
+
+
+
+
+
+
